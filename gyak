@@ -67,4 +67,4 @@ my_tuple = ()
 
 my_dict = {}
 
-print(type(hamis)) # típus megnézése
+print(type(hamis)) # típus kiírása
