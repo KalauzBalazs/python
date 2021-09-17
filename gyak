@@ -1,0 +1,70 @@
+print("hello world")
+
+
+
+
+
+# minden ami ez után van, azt a fordító ignorálni fogja
+
+(
+"""
+többsoros 
+komment     
+"""
+
+jupyterben nem működik
+
+'''
+ez 
+is
+'''
+)
+
+
+
+
+
+# int szam = 10;
+
+szam1 = 10 # int
+szam2 = 20
+
+szam3 = 3.14 # float
+
+aSD_12 = 45 #változóban használható karakterek
+
+print(szam1)
+
+szam1=87
+
+print (szam1)
+
+szam1 = 3.14
+
+print (szam1)
+
+
+
+
+
+#Numbers, String, Boolean, List, Tuple, Dictionary, user definied
+
+szam1 = 10 # number
+szam2 = 24.89745 # number
+szam3 = 32.3e18 # number
+szam4 = .876j # number
+
+nev1 = "Eniko" # string
+hajszin = 'szoke' # string
+mondas = 'ki koran kel, aranyat lel!'
+
+igaz = True
+hamis = False
+
+lista = []
+
+my_tuple = ()
+
+my_dict = {}
+
+print(type(hamis)) # típus megnézése
