@@ -1,75 +1,77 @@
-
+#import sys #könytár szükséges a sys.float_info.dig
 x = 5 
-
-s = "123"
 print(type(x))
-
+s = "123"
 print(type(s))
 #print=(x+s) 
 print(type(s) is str)
 print(type(s) is int)
-
 a1 = 120
-
 print(type(a1))#int
 
 a2=12.0
-print(type(a2))
+print(type(a2)) #float
 
 a3=5+1j
 print(type(a3)) #complex
 
-a4 = float(7) #típuskonverzió
-print(type(a4))
-
-a5= str(1)
+a4 = float(7)
+print(type(a4)) #tipuskonverzio
+a5 =str(1)
 print (type(a5))
-print(a5)
-
-#print(a1+a5)#hiba
-
+print (a5)
+print (a4)
+#print(a1+a5) #hiba
+print (a2+a4)
 #sys.float_info.dig
-
 print(a1+int(a5))#számmá alakul az a5, csak itt!
 print(type(a5))#egyébként marad string
 
 s1='11'
 s2='12'
 print(type (s1+s2))
-print(type(int(s1+s2))) #típus konverzió
+print(type(int(s1+s2))) #típuskonverzió
 
 print ("alma"+" "+"körte")#stringek összefűzése
 print(s2*10)
 print("alma"*10)
-
-print('a','b','c','da\'sda"as"sd--e')
-print('a','b','c',"deas'aaa'asd")
-print('a','b','c',"de",sep="")
-print('a','b','c',"de",sep="***")
-print("x\ny")
+print('a', 'b','c', 'da\'sda"as"sd--e')
+print("a","b","c","deas'aaa'asd")
+print("a","b","c","de", sep="")
+print("ab","b","c","de", sep="***")
+print("x\ry")
 print("x\ty")
-print("Ez kerüljön",end=" ")
-print("egy sorba.")
-print("Ez kerüljön",end="\n")
-print("külön sorba.")
-
-print("range(6): \t", end="")
-# 0 1 2 3 4 5
+print("x\ny")
+print("x\ay")
+print("x\fy")
+print("x\vy")
+print("x\by")
+print("Ez kerüljön", end=" ")
+print("egy sorba")
+print ("range(6):   \t" , end="")
+#0 1 2 3 4 5
 for x in range(6):
-    print("%4d" %  x, end="")
+    print("%4d" % x, end="")
     
 print("\nrange(3,9): \t", end="") 
 # 3 4 5 6 7 8
 for x in range(3,9):
     print("%4d" % x,end="")
+    
+    print("\nrange(3, 14, 2):\t", end="")
+# 3 5 7 9 11 13
+for x in range(3, 14, 2):
+    print("%4d" % x, end="")
+    
 print("\nrange(14,3,-2):\t",end="")
 #14 12 10 8 6 4
 for x in range(14,3,-2):
     print("%4d" % x, end="")
 print("\n")
-
-
-
+print("\narray (tömb):\t", end="")
+primes = [2, 3, 5, 7] #ez egy tömb, késöbb erről bővebben
+for prime in primes:
+    print("%4d" % prime, end="")
 
 #feladat: 1+2+3+4+5+6+7+8+9+10
     x=1
