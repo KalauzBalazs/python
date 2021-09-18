@@ -68,3 +68,67 @@ my_tuple = ()
 my_dict = {}
 
 print(type(hamis)) # típus kiírása
+
+
+
+
+
+# + - * / // ** &
+
+szam1 = 5
+szam2 = 11
+
+print(szam1+szam2)
+print(szam1-szam2)
+print(szam1*szam2)
+print(szam1/szam2)
+print(szam2//szam1)
+print(szam1**szam2)
+print(szam2&szam1)
+
+
+
+
+
+# assigment operators - értékadó operátorok
+
+# = += -= *= /= //= &= **=
+
+szam = 10
+
+print(szam)
+
+# szam = szam + 1
+szam += 1
+
+print (szam)
+
+szam -= 1
+
+print(szam)
+
+szam *= 40
+    
+print(szam)
+
+
+
+
+
+# comparison or relation operators - osszehasonlito vagy relacios operatorok - boolan operatorok
+
+# < > <= >= != ==
+
+szam1= 4
+szam2 = 4 
+
+print(szam1 < szam2)
+
+print(szam1 > szam2)
+
+print(5 >= 6)
+
+print(14 != 14)
+
+print(87 == 88)
+print(szam1 == szam2)
