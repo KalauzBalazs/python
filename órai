@@ -149,3 +149,39 @@ else:
     print("%d" %z)
         
 
+while a<0:
+    print("A szám nem lehet negatív")
+    a=int(input("Add meg az első számot!"))
+while b<0:
+    print("A szám nem lehet negatív")
+    b=int(input("Add meg a második számot!"))
+def Inko(a,b):
+        while b>0:
+            a,b = b, a%b
+        return a
+print(Inko)
+
+
+while a<0:
+    print("A azám nem lehet negatív")
+    a=int(input("Add meg az első számot!"))
+while b<0:
+    print("A azám nem lehet negatív")
+    b=int(input("Add meg a második számot!"))
+    
+    if a<b:
+        seged = a
+        a = b
+        b = seged
+        
+        
+    maradek = a % b
+    
+    while maradek > 0:
+        a=b
+        b=maradek
+        maradek = a % b
+        
+    Iko = b
+    
+    print("A legnagyobb közös osztó a %d" % Iko)
