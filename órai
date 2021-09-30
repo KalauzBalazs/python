@@ -291,3 +291,21 @@ elif opcio==3
     print("A két szám összege: %d" %(a*b))
 else:
     print("A szám hányadosa: %.2f" %(a/b))
+
+
+A=int(input("Add meg az első számot: "))
+B=int(input("Add meg a második számot: "))
+
+opcio=int(input("Add meg milyen műveletet szeretnél végrehajtani: ")
+          
+match opcio:
+    case "1":
+        print("A két szám összege: %d" %(a+b))
+    case "2":
+        print("A két szám külömbsége: %d" %(a-b))
+    case "3":
+        print("A két szám szorzata: %d" %(a*b))
+    case "4":
+        print("A két szám hányadosa: %d" %(a/b))
+    case _:
+        print("Rossz input! Kilép!")
