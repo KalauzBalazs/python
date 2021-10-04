@@ -276,21 +276,21 @@ for i in range(10):
 a=int(input("Add meg az első számot: "))
 b=int(input("Add meg a második számot: "))
 
-opcio=int(input("Add meg hogy milyen műveletet szeretne végrehjtani:")
+opcio=int(input("Add meg hogy milyen műveletet szeretne végrehjtani:"))
 
 
 while opcio<1 or opcio>4:
     print("Rossz input! Kilép!")
-
-          
-if opcio==1
+    exit()
+if opcio==1:
     print("A két szám összege: %d" %(a+b))
-elif opcio==2
+elif opcio==2:
     print("A két szám külömbsége: %d" %(a-b))
-elif opcio==3
+elif opcio==3:
     print("A két szám összege: %d" %(a*b))
 else:
     print("A szám hányadosa: %.2f" %(a/b))
+    
 
 
 A=int(input("Add meg az első számot: "))
