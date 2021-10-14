@@ -309,3 +309,38 @@ match opcio:
         print("A két szám hányadosa: %d" %(a/b))
     case _:
         print("Rossz input! Kilép!")
+
+
+#Készítsünk egy játékprogrmot! 
+#A program tudjon írni számot 1 és 100 között.
+#A játékosnak ki kell találni a számot.
+#Ha nem találja ki a számot akkor írja ki a program, hogy a megadott 
+#számnál kissebb-e vagy nagyobb-e. Ha kitalálta a számot, akkor 
+#Jellezze a program egy üzenettel.
+import random 
+#random.randint(tól,ig)
+x=random.randint(1,100)
+y=int(input("Add meg a számot"))
+while y!=x:
+    if y<x:
+        print("A szám nagyobb")
+        y=int(input("Add meg  újra a számot"))
+    else:
+        print("A szám kisebb")
+        y=int(input("Add meg  újra a számot"))
+print("sikerült")
+
+
+#Megoldás
+import random 
+rand=random.randint(1,100)
+print(rand)
+gondolt=int(input("Tippelj egy számra!"))
+while gondolt!=rand:
+    if gondolt>rand:
+        print("A tipped nagyobb mint a szám!")
+        gondoltszam=int(input("Tippelj újra!"))
+    else:
+        print("A tipped kisebb mint a szám!")
+        gondoltszam=int(input("Tippelj újra!"))
+print("Gratulálok, eltaláltad!")
