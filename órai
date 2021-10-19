@@ -342,3 +342,17 @@ while gondolt!=rand:
         print("A tipped kisebb mint a szám!")
         gondoltszam=int(input("Tippelj újra!"))
 print("Gratulálok, eltaláltad!")
+
+
+#Készíts programot, amely addig olvas a billentyűzetről egész számokat,
+#amíg 0-át nem olvas, akkor kiírja az addig beolvasott számok 
+#összegét és átlagát
+eredmeny=0
+n=0
+szam=int(input("Adj meg egy egész számot: "))
+while szam!=0:
+    eredmeny=eredmeny+szam
+    n=n+1
+    szam=int(input("Adj meg egy egész számot: "))
+print("A beolvasott számok összege %d"%eredmeny)
+print("A beolvasott számok számtani átlaga %.2f"%(eredmeny/n))
