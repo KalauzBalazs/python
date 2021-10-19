@@ -356,3 +356,34 @@ while szam!=0:
     szam=int(input("Adj meg egy egész számot: "))
 print("A beolvasott számok összege %d"%eredmeny)
 print("A beolvasott számok számtani átlaga %.2f"%(eredmeny/n))
+
+
+autok=["VW","suzuki","opel","honda"]
+print(autok[1])
+print(autok[2])
+print(autok)
+for i in autok:
+    print (i)
+autok.append("mercedes")
+print(autok)
+autok.remove("VW")
+print(autok)
+autok.pop(3)
+print(autok)
+autok.insert(0, "VW")
+print(autok)
+autok.reverse()
+print(autok)
+autok.sort()
+print(autok)
+
+
+szamok=[int(input("Adj meg egy számot!: "))]
+i=0
+eredmeny=0
+while szamok[i]!=0:
+    eredmeny+=szamok[i]
+    i+=1
+    szamok.append(int(input("Adj meg egy számot!: ")))
+print("A beolvasott számok összege %d"%eredmeny)
+print("A beolvasott számok számtani átlaga %.2f" %(eredmeny/(len(szamok)-1)))
