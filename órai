@@ -396,16 +396,21 @@ print("A beolvasott számok számtani átlaga %.2f" %(eredmeny/(len(szamok)-1)))
 szam=int(input("Adj meg egy számot: "))
 while szam==0:
     szam=int(input("Adj meg egy számot: "))
-szamok[szam]
+szamok=[szam]
 while szam!=0:
     szam=int(input("Adj meg egy számot: "))
     szamok.append(szam)
 szamok.pop()
-szamok[i]
-print(szamok)
+#print(szamok)
 
 minimum=szamok[0]
 for i in range(1,len(szamok)):
-    if minimum>zmok[i]:
+    if minimum>szamok[i]:
         minimum=szamok[i]
-print(minimum)
+print("A legisebb szám a tömbben : %d" %minimum)
+
+maximum=szamok[0]
+for i in range(1,len(szamok)):
+    if maximum<szamok[i]:
+        maximum=szamok[i]
+print("A legnagyobb szám a tömbben : %d" %maximum)
