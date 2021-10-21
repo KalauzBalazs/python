@@ -407,10 +407,29 @@ minimum=szamok[0]
 for i in range(1,len(szamok)):
     if minimum>szamok[i]:
         minimum=szamok[i]
-print("A legisebb szám a tömbben : %d" %minimum)
+print("A legkisebb szám a tömbben : %d" %minimum)
 
 maximum=szamok[0]
 for i in range(1,len(szamok)):
     if maximum<szamok[i]:
         maximum=szamok[i]
 print("A legnagyobb szám a tömbben : %d" %maximum)
+
+
+# Feladat: Tölt fel egy 100 elemű tömböt véletlen egész számokkal, majd vizsgáld meg
+#hogy van két egyforma eleme a tömbnek. Hány darab egyform szám fordul elő?
+#  véletlen számok [1-10] intervallumb essen.
+import random
+
+tömb=[random.randint(1,10)]
+for i in range(1,100):
+    tömb.append(random.randint(1,10))
+print(tömb)    
+
+szamok=[0,0,0,0,0,0,0,0,0,0]
+for i in tömb:
+    for j in range(0,10):
+        if i==(j+1):
+            szamok[j]+=1
+for k in range(0,10):
+    print("A(z) %d szam %d alkalommal szerepel a tömbben!" %((k+1), szamok[k]))
