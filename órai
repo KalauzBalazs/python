@@ -433,3 +433,55 @@ for i in tömb:
             szamok[j]+=1
 for k in range(0,10):
     print("A(z) %d szam %d alkalommal szerepel a tömbben!" %((k+1), szamok[k]))
+
+
+
+#tölts fel egy 100 elemű tömböt [10-50] közötti random számokkal.
+#Vizsgáld meg a tömböt,hogy hány olyan szám van, amelynek mindkét 
+#számjege azonos (pl.11, 22, stb.)Írd ki a kapott eredményt, majd írd át 
+#ezeket  számjegyük összegére(pl. 11=2, 22=4, stb)
+import random
+
+szamlalo=[0,0,0,0]
+rand_tomb=[random.randint(10,50)]
+for i in range(0,100):
+    rand_tomb.append(random.randint(10,50))
+    
+for i in range(0,100):
+    for j in range(0,4):
+        if rand_tomb[i]==(j+1)*11:
+            szamlalo[j]+=1
+            rand_tomb[i]=2*(j+1)
+
+for k in range(0,4):
+    print("A %d számjegyből %d találat volt!" %((k+1)*11, szamlalo[k]))
+
+
+
+#tölts fel egy 100 elemű tömböt [10-50] közötti random számokkal.
+#Vizsgáld meg a tömböt,hogy hány olyan szám van, melyeknek a számjegyeinek
+#az összege egyenlő egymással. PL. ha előfordul 14, 23, 32, 41, akkor ezek
+# összege 5,tehát 4 darab számom volt.
+szamlalo=[0,0,0,0,0,0,0,0,0,0,0,0,0]
+rand_tomb=[random.randint(10,50)]
+for i in range(0,100):
+    rand_tomb.append(random.randint(10,50))
+
+    
+result=[]
+for i in rand_tomb:
+    str1=str(i)
+    for j in range(0,14):
+        for k in str1:
+            #print(k)
+            result.append(int(k))
+        osszeg=result[0]+result[1]
+        #print(type(osszeg))
+        if osszeg==(j+1):
+            szamlalo[j]+=1
+
+for m in range(0,13):
+    print("Ha a számjegyek összege %d, abból %d találat volt!" %((m+1), szamlalo[m]))
+    
+print(rand_tomb)
+print(rand_tomb)
