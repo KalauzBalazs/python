@@ -75,7 +75,7 @@ for prime in primes:
 
 #feladat: 1+2+3+4+5+6+7+8+9+10
     x=1
-    for i in range (1,11)
+    for i in range (1,11):
         x=x+(i+1)
         
 print(x)
@@ -258,7 +258,7 @@ for i in range(1,n):
     print("")
             
 
-HF monogram csillagokkal
+#HF monogram csillagokkal
 for i in range(10):
     for j in range(14):
         if ((j==0 or j==7) or (j==13 and (i!=0 and i!=9))) or ((j>7 and j<13) and (i==0 or i==4 or i==9)):
@@ -290,7 +290,7 @@ else:
     print("A szám hányadosa: %.2f" %(a/b))
     
 
-
+'''
 A=int(input("Add meg az első számot: "))
 B=int(input("Add meg a második számot: "))
 
@@ -308,7 +308,7 @@ match opcio:
     case _:
         print("Rossz input! Kilép!")
 
-
+'''
 #Készítsünk egy játékprogrmot! 
 #A program tudjon írni számot 1 és 100 között.
 #A játékosnak ki kell találni a számot.
