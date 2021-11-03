@@ -462,6 +462,9 @@ for k in range(0,4):
 #Vizsgáld meg a tömböt,hogy hány olyan szám van, melyeknek a számjegyeinek
 #az összege egyenlő egymással. PL. ha előfordul 14, 23, 32, 41, akkor ezek
 # összege 5,tehát 4 darab számom volt.
+
+import random
+
 szamlalo=[0,0,0,0,0,0,0,0,0,0,0,0,0]
 rand_tomb=[random.randint(10,50)]
 for i in range(0,100):
@@ -483,5 +486,4 @@ for i in rand_tomb:
 for m in range(0,13):
     print("Ha a számjegyek összege %d, abból %d találat volt!" %((m+1), szamlalo[m]))
     
-print(rand_tomb)
 print(rand_tomb)
