@@ -485,3 +485,55 @@ for m in range(0,13):
     print("Ha a számjegyek összege %d, abból %d találat volt!" %((m+1), szamlalo[m]))
     
 print(rand_tomb)
+
+
+
+#Tölts fel egy 100 elemű tömböt [10-50] közötti random számokkal
+#Vizsgáld meg a tömböt, hogy hány olyan szám van amely 5-tel és 7-tel
+#végződik.Írd ki az eredményeket.
+import random
+ran=[random.randint(10,50)]
+szamlalo=[0,0]
+result=[]
+for i in range(100):
+    ran.append(random.randint(10,50))
+    
+for i in ran:
+    for j in range(0,1):
+        str1=str(i)
+        for k in str1:
+            result.append(int(k))
+        if result[1]==5:
+            szamlalo[0]+=1
+        elif result[1]==7:
+            szamlalo[1]+=1
+        result.clear()
+print(szamlalo)
+print(ran)
+print("Ötös végzűdésű elemből %d elem van!"%szamlalo[0])
+print("Hetes végzűdésű elemből %d elem van!"%szamlalo[1])
+
+
+
+import random
+
+szamlalo=[0,0
+
+rand_tomb=[random.randint(10,50)]
+
+for i in range(100):
+    ran.append(random.randint(10,50))
+          
+result=[]
+print(rand_tomb)
+for i in rand_tomb:
+        str1=str(i)
+        for k in str1:
+            result.append((k))
+        if result[1]=="5":
+            szamlalo[0]+=1
+        elif result[1]=="7":
+            szamlalo[1]+=1
+        result.clear()
+print("Ötös végzűdésű elemből %d elem van!"%szamlalo[0])
+print("Hetes végzűdésű elemből %d elem van!"%szamlalo[1])
