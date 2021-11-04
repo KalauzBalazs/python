@@ -462,9 +462,7 @@ for k in range(0,4):
 #Vizsgáld meg a tömböt,hogy hány olyan szám van, melyeknek a számjegyeinek
 #az összege egyenlő egymással. PL. ha előfordul 14, 23, 32, 41, akkor ezek
 # összege 5,tehát 4 darab számom volt.
-
 import random
-
 szamlalo=[0,0,0,0,0,0,0,0,0,0,0,0,0]
 rand_tomb=[random.randint(10,50)]
 for i in range(0,100):
@@ -473,13 +471,13 @@ for i in range(0,100):
     
 result=[]
 for i in rand_tomb:
-    str1=str(i)
+  
     for j in range(0,14):
+        str1=str(i)
         for k in str1:
-            #print(k)
             result.append(int(k))
         osszeg=result[0]+result[1]
-        #print(type(osszeg))
+        result.clear()
         if osszeg==(j+1):
             szamlalo[j]+=1
 
