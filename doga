@@ -7,7 +7,7 @@ else:
     print("A szám egyenlő tízzel!")
     
     
-    y=0
+y=0
 for x in range(10,0,-1):
     if y==1:
         print(",%d"%x, end="")
