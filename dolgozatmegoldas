@@ -1,0 +1,48 @@
+jelszo=str(input("Add meg a helyes jelszót!"))
+helyes=["alma","korte","szilva"]
+while jelszo not in helyes:
+    jelszo=str(input("Helytelen jelszo! Add meg újra: "))
+print("Gratulálok be tudtál lépni!")
+
+
+for i in range (1,50,3):
+    if i<49:
+        print("%d"%i,end=",")
+    else:
+        print("%d"%i,end="")
+
+print("\n")
+    
+for j in range (49,0,-3):
+    if j>1:
+        print("%d"%j,end=",")
+    else:
+        print("%d"%j,end="")
+        
+
+szam=int(input("Adj meg egy számot: "))
+eredmeny=0
+n=1
+minimum=szam
+while n<10:
+    eredmeny+=szam
+    n+=1
+    if szam<minimum:
+        minimum=szam
+    szam=int(input("Adj meg egy számot: "))
+eredmeny+=szam
+print("A beolvasott szamok számtani átlga: %.2f"%(eredmeny/n))
+print("A legisebb beolvasott szám: %d"%minimum)
+
+
+import random
+
+rand_tomb=[random.randint(10,50)]
+for i in range(1,100):
+    rand_tomb.append(random.randint(10,50))
+    
+uj_tomb=[]
+for j in range(0,50):
+        uj_tomb.append(rand_tomb[2*j]+rand_tomb[2*j+1])
+print(rand_tomb)
+print(uj_tomb)
