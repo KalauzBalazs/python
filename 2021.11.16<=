@@ -1,0 +1,116 @@
+#tölts fel egy tömbött 100 random számmal és irasd ki  a páros számokat, írd ki hány páros szám van
+import random
+x=[random.randint(1,100)]
+szamlalo=0
+for i in range (1,100):
+    x.append(random.randint(1,1000))
+
+for i in x:
+    if i%2==0:
+        szamlalo+=1
+        print(i, end=" ")
+k=len(x)
+
+"""for r in range(k):
+    if x[r]<x[r+1]:
+        print(x[r])"""
+
+print("\n%d páros szám van."%szamlalo)
+print("A páros számok darabszáma %d."%szamlalo)
+
+
+#Az előző feladat tömbjébő irasd ki azokat z elemeket amelyek mellett jobról nézve nagyobb szám szerepel.
+import random
+x=[random.randint(1,100)]
+szamlalo=0
+for i in range (1,100):
+    x.append(random.randint(1,1000))
+    
+for i in range (100):
+    if i<(len(x)-1):
+        if x[i]<x[i+1]:
+            print(x[i], end=" ")
+            
+            
+           
+#Tölts fel egy 100 elemű tömböt random egész számokkal [-50;+50]
+#intervallumbon.Ceréld ki a negtív számokat az abszulút értékükre
+import random
+x=[random.randint(-50,50)]
+szamlalo=0
+for i in range (1,100):
+    x.append(random.randint(-50,50))
+    
+"""for i in x:
+    if i<0:
+        i=abs(i)
+        x[].append(i)"""
+for i in range(100):
+    if x[i]<0:
+        x[i]=abs(x[i])
+print(x)
+
+
+
+#Az előző [50,-50]tömbből irasd ki a negatív páratlan számokat
+import random
+x=[random.randint(-50,50)]
+szamlalo=0
+for i in range (1,100):
+    x.append(random.randint(-50,50))
+
+for i in x:
+    #if i<0 and i%2!=0:
+    if i<0:
+        if i%2!=0:
+            print(i, end=" ")
+            
+            
+            
+#Az előző [50,-50]tömbből irasd ki a negatív páratlan számokat
+import random
+x=[random.randint(-50,50)]
+szamlalo=0
+for i in range (1,100):
+    x.append(random.randint(-50,50))
+
+for i in x:
+    #if i<0 and i%2!=0:
+    if i<0:
+        if i%2!=0:
+            print(i, end=" ")
+            
+            
+            
+#Tölts fel egy 10 elemű tömböt a standart bemenetről és rendezd sorba a tömb
+#elemeit növekvő sorrendbe! Duplomok előfordulása nem megengedett, ezt szürd ki egy input ellenörzéssel.
+tomb=[]
+"""n=0
+    while n!=10:
+    n+=1
+    x=int(input("Adj meg egy számot"))
+    for i in tomb:
+        if i == x:
+            x=int(input("Hibbás szám add meg újra"))
+    tomb.append(x)
+tomb2=[]
+for i in range (10):
+    if i<(len(tomb)-1):
+        if tomb[i]<tomb[i+i]:
+            tomb2.append(tomb[i])"""
+tomb.append(int(input("Adj meg egy számot: ")))
+for i in range(1,10):
+    szam=(int(input("Adj meg egy számot: ")))
+    while szam in tomb:
+        szam=(int(input("Ez a szám már létezik.Adj meg egy újat. ")))
+    tomb.append(szam)
+    
+print(tomb)
+rendezett=[]
+
+for i in tomb:
+    
+    if i < k:
+        k=i
+print(k)
+     
