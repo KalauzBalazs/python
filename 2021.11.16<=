@@ -151,3 +151,93 @@ for i in range (10):
             tomb[j]=tem
 
 print(tomb)
+
+
+
+#buborék rendezés
+
+#Tölts fel egy 10 elemű tömböt a standart bemenetről és rendezd sorba a tömb
+#elemeit növekvő sorrendbe! Duplomok előfordulása nem megengedett, ezt szürd ki egy input ellenörzéssel.
+tomb=[]
+
+tomb.append(int(input("Adj meg egy számot: ")))
+for i in range(1,10):
+    szam=(int(input("Adj meg egy számot: ")))
+    while szam in tomb:
+        szam=(int(input("Ez a szám már létezik.Adj meg egy újat. ")))
+    tomb.append(szam)
+print(tomb)
+
+
+#buborék rendezés
+"""
+Az egymás utáni elemeket összehasonlítjuk, ha a nagyobb értékű elem alacsonybb indexű helyen vn akkor kicseréljük őket
+A tömböm először  legnagyobb elem a legnagyobb sorszámú helyen lesz.
+A külső ciklus n-1-től halad 1-ig, visszafelé. A belső ciklus 0-tól iterál [i-1]-ig.
+"""
+for i in range(len(tomb),1,-1):
+    for j in range (i-1):
+        if tomb[j]>tomb[j+1]:
+            temp=tomb[j+1]
+            tomb[j+1]=tomb[j]
+            tomb[j]=temp
+print(tomb)
+
+
+#Tölts fel egy 10 elemű tömböt a standart bemenetről és rendezd sorba a tömb
+#elemeit növekvő sorrendbe! Duplomok előfordulása nem megengedett, ezt szürd ki egy input ellenörzéssel.
+tomb=[]
+
+tomb.append(int(input("Adj meg egy számot: ")))
+for i in range(1,10):
+    szam=(int(input("Adj meg egy számot: ")))
+    while szam in tomb:
+        szam=(int(input("Ez a szám már létezik.Adj meg egy újat. ")))
+    tomb.append(szam)
+print(tomb)
+
+#cserés rendezés
+"""
+A tömbb 1...n elem közül kiválasztja alegkisebbet, majd a legelső elem 
+helyére teszi.
+A tömbb 2...n elem közül kiválasztja alegkisebbet, majd a legelső elem 
+helyére teszi.
+És így tovább...
+"""
+
+for i in range(len(tomb)-1):
+    for j in range(i+1,len(tomb)):
+        if tomb[i]>tomb[j]:
+            temp=tomb[j]
+            tomb[j]=tomb[i]
+            tomb[i]=temp
+print(tomb)
+
+
+
+#Tölts fel egy 10 elemű tömböt a standart bemenetről és rendezd sorba a tömb
+#elemeit növekvő sorrendbe! Duplomok előfordulása nem megengedett, ezt szürd ki egy input ellenörzéssel.
+tomb=[]
+
+tomb.append(int(input("Adj meg egy számot: ")))
+for i in range(1,10):
+    szam=(int(input("Adj meg egy számot: ")))
+    while szam in tomb:
+        szam=(int(input("Ez a szám már létezik.Adj meg egy újat. ")))
+    tomb.append(szam)
+print(tomb)
+
+#Beszúrásos rendezés
+"""
+Sorra egymás után kiemeljük a tömb elemeit. Ha a kiemelt elem elött nála 
+nagyobb elemeket találunk, akkor azokat egyel hátrébb másoljuk.
+"""
+
+for i in range(1,len(tomb)):
+    kulcs=tomb[i]
+    j=i-1
+    while j>=0 and tomb[j]>kulcs:
+        tomb[j+1]=tomb[j]
+        j-=1
+    tomb[j+1]=kulcs
+print(tomb)
