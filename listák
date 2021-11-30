@@ -33,6 +33,32 @@ print(lista)
 lista.reverse()#Lista megfordítása.
 print(lista)
 
-print(lista[2].count("a")#Megszámolja az "a" betű előfordulását a 3. elemben.)
-print(szamok.count(1))#Megszámolja az 1e előfordulását.
+print(lista[2].count("a"))#Mgszámolja az "a" betű előfordulását a 3. elemben.
 
+print(szamok.count(1))#Megszámolja az 1-es előfordulását.
+    
+print(lista.index("bicska"))#Kiírja a keresett elem index számát.
+      
+mondat="""A kockázatok és mellékhatások tekintetében
+olvasa el a betegtájékoztetót."""#többsoros string írása
+
+szavak=mondat.split()#A szóközök mentén feldarbolja a stringeket.
+print(szavak)
+
+print(" ".join(szavak))
+
+#LISTA BEJÁRÁSA (List comprehension):
+
+
+ujlista2=[x for x in lista]
+print(ujlista2)
+#ujlista=[kifejezésekfor elem in list]
+
+#a alma kivételével hhozzá rendel mindel elemet a listából.
+
+ujlista3=[elem for elem in lista if elem!=("alma")]#not-tal is működik.
+print(ujlista3)
+
+szamok2=[x for x in range(5,50,3)]#Belerakja a számokat 5-50 között, hármasával.
+
+print(szamok2)
