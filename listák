@@ -10,4 +10,4 @@ print(lista[2:3])#az első elemtől  3.-ig A 3. már nincs benne
 print(lista[1:5])#a 2.-tól a 4.-ig A 4. már nincs benne
 print(lista[-1])#az utolsó elem indexe -1
 print(lista[-4])#hátulról a 4. elem.
-print(lista[1:-1])#Amásodiktól az utolsó elöttiig.
+print(lista[1:-1])#A másodiktól az utolsó elöttiig.
