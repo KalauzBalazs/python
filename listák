@@ -62,3 +62,27 @@ print(ujlista3)
 szamok2=[x for x in range(5,50,3)]#Belerakja a számokat 5-50 között, hármasával.
 
 print(szamok2)
+
+
+
+#tölts fel egy listát vegyes adatokkal.Az adatok:Név,Szül. idő, Szül. hely, Anyja neve.Legelább 10 személy adatait töltsd fel a 
+#listába, majd rendezd őket név szerint növekvő sorrendbe.
+#Az ddatokat futási időben , billengyűzetről kell megadni.
+adatok=[]
+for i in range(5):
+    adatok.append(str(input("Név: "))+", "+str(input("Szül. hely: "))+", "+str(input("Anyja neve: ")))
+    
+adatok.sort()
+print(adatok)
+
+
+
+"""Tölts fel egy 10 elemű listát vegyesen egész számokkal
+és stringekkel majd irasd ki a listából csak az egész számokat.Az adtokat
+futási időbe kell megadni."""
+lista=[]
+for i in range(10):
+    lista.append(input("Adj meg egy elemet: "))
+    
+ujlista=[x for x in lista if type(x)==int]
+print(ujlista)
