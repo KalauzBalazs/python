@@ -1,13 +1,38 @@
 #listák!!!
 
-lista=["alma","körte","bicska","pálink","kerítészaggató"]
+lista=["alma","körte","bicska","pálinka","kerítészaggató"]
 print(lista)
 ujlista=[2,"pitypang",3.18,"Freddy","Hey Google",True]
 print(ujlista)
 print(lista[2])
-#slice notation vagy szeletelő jelölés
-print(lista[2:3])#az első elemtől  3.-ig A 3. már nincs benne
-print(lista[1:5])#a 2.-tól a 4.-ig A 4. már nincs benne
-print(lista[-1])#az utolsó elem indexe -1
-print(lista[-4])#hátulról a 4. elem.
+#slice notation vagy szeletelő jelölés (slicing):
+print(lista[2:3])#Az első elemtől  3.-ig A 3. már nincs benne
+print(lista[1:5])#A 2.-tól a 4.-ig A 4. már nincs benne
+print(lista[-1])#Az utolsó elem indexe -1
+print(lista[-4])#Hátulról a 4. elem.
 print(lista[1:-1])#A másodiktól az utolsó elöttiig.
+print(lista[-2][:3])#Az utolsó elötti elem első 3 betűjét.
+print(ujlista[::2])#A teljeslistából minden második elemet listáz.
+szamok=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(szamok[1:-1:3])#Másodiktól az  utolsó elötti elemig, minden harmdikat.
+print(szamok[-1::-1])#hátuljáról az elejéig viszafelé.
+#ugyan ez:
+print(szamok[::-1])   
+
+lista.append("barack")
+print(lista[-1])
+lista.append("alma")
+print(lista)
+lista.remove("alma")#Kitörli az első találtot
+print(lista)
+
+lista.sort()#ABC szerint sorba rendez.ASCII kód szerint rendez.
+print(lista)
+#ujlista.sort()Különböző típusokat nem tud sorba rendezni.
+
+lista.reverse()#Lista megfordítása.
+print(lista)
+
+print(lista[2].count("a")#Megszámolja az "a" betű előfordulását a 3. elemben.)
+print(szamok.count(1))#Megszámolja az 1e előfordulását.
+
