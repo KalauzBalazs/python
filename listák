@@ -102,10 +102,6 @@ for i in range(10):
     lista.append(input("Adj meg egy elemet: "))
 
 
-"""ujlista=[x for x in lista if x[0]>"/" and x[0]<":"]
-print(ujlista)"""
-
-
 ujlista=[]
 for i in  lista:
     r=1
