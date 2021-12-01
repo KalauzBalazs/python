@@ -86,4 +86,34 @@ for i in range(10):
     
 ujlista=[x for x in lista if type(x)==int]
 print(ujlista)
-HF
+
+
+
+
+#HF
+
+
+
+"""Tölts fel egy 10 elemű listát vegyesen egész számokkal
+és stringekkel majd irasd ki a listából csak az egész számokat.Az adtokat
+futási időbe kell megadni."""
+lista=[]
+for i in range(10):
+    lista.append(input("Adj meg egy elemet: "))
+
+
+"""ujlista=[x for x in lista if x[0]>"/" and x[0]<":"]
+print(ujlista)"""
+
+
+ujlista=[]
+for i in  lista:
+    r=1
+    for j in range (len(i)):
+        if i[j]<"0" or i[j]>"9" or i=="":
+            r=0
+        elif i=="":
+            r=0
+    if r==1:
+        ujlista.append(i)
+print(ujlista)
