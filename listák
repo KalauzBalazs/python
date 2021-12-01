@@ -78,7 +78,7 @@ print(adatok)
 
 
 """Tölts fel egy 10 elemű listát vegyesen egész számokkal
-és stringekkel majd irasd ki a listából csak az egész számokat.Az adtokat
+és stringekkel majd irasd ki a listából csak az egész számokat.Az adatokat
 futási időbe kell megadni."""
 lista=[]
 for i in range(10):
