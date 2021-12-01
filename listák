@@ -112,8 +112,6 @@ for i in  lista:
     for j in range (len(i)):
         if i[j]<"0" or i[j]>"9" or i=="":
             r=0
-        elif i=="":
-            r=0
     if r==1:
         ujlista.append(i)
 print(ujlista)
