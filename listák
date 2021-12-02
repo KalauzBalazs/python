@@ -111,3 +111,29 @@ for i in  lista:
     if r==1:
         ujlista.append(i)
 print(ujlista)
+
+
+
+#Megoldás
+"""Tölts fel egy 10 elemű listát vegyesen egész számokkal
+és stringekkel majd irasd ki a listából csak az egész számokat.Az adatokat
+futási időbe kell megadni."""
+lista=[]
+for i in range(10):
+    lista.append(input("Adj meg egy elemet:"))
+    
+ujlista=[x for x in lista if x.isnumeric()==True]
+print(ujlista)
+
+
+#másik megoldás 
+ujlista2=[]
+for i in lista:
+    for j in i:
+        if j<"0" or j>"9":
+            szam=False
+        else:
+            szam=True
+    if szam==True:
+        ujlista2.append(i)
+print (ujlista2)
