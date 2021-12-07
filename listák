@@ -137,3 +137,78 @@ for i in lista:
     if szam==True:
         ujlista2.append(i)
 print (ujlista2)
+
+
+#lista a listában
+lista=[[1,2,3,4,5],["alma","körte","szilva","barack","banán"]]
+print(lista[1][-1])
+print(lista[0][2])
+
+
+#tölt fel egy listát lista elemekkel amellyekben az alábbi adatok szerepelne:
+#név születési hely, és anyja neve.Listázd ki min azon személyeknek az adatait,
+#Amelyeknek az elemei "N" betű elöt találod(A-L).
+#Az adatokat vidd be futtatási időben
+
+lista=[[],[],[]]
+for i in range (5):
+    lista[0].append(input("Adja meg a nevét: "))
+    lista[1].append(input("Adja meg a születési helyét: "))
+    lista[2].append(input("Adja meg az anyja nevét: "))
+k=[]
+for i in range (5):
+    if lista[0][i]>"A" and lista[0][i]<"L":
+        k.append(i)
+for i in range(3):
+    print(lista[i][k[i]])
+    
+    
+   #tölt fel egy listát lista elemekkel amellyekben az alábbi adatok szerepelne:
+#név születési hely, és anyja neve.Listázd ki min azon személyeknek az adatait,
+#Amelyeknek az elemei "N" betű elöt találod(A-L).
+#Az adatokat vidd be futtatási időben
+
+adatok=[[],[],[]]
+for i in range (3):
+    adatok[0].append(input("Név: "))
+    adatok[1].append(input("Adja meg a születési helyét: "))
+    adatok[2].append(input("Adja meg az anyja nevét: "))
+    
+print("Személyek akiknek a vezetékneve [A-L] közé esik:")
+for i in range (len(adatok[0])):
+    if adatok[0][i][0]<"M":
+        print("Név:%s" %adatok[0][i])
+        print("Születési helye:%s" %adatok[1][i])
+        print("Anyja neve:%s" %adatok[2][i])
+        
+#bővítse ki úgy a feladatot ,hogy születési helyet is be kérsz és sorba rendezed a születési dátum szerint
+
+
+
+#tölt fel egy listát lista elemekkel amellyekben az alábbi adatok szerepelne:
+#név születési hely, és anyja neve.Listázd ki min azon személyeknek az adatait,
+#Amelyeknek az elemei "N" betű elöt találod(A-L).
+#Az adatokat vidd be futtatási időben
+
+adatok=[[],[],[],[]]
+for i in range (3):
+    adatok[0].append(input("Név: "))
+    adatok[1].append(input("Adja meg a születési helyét: "))
+    adatok[2].append(input("Adja meg az anyja nevét: "))
+    adatok[3].append(input("Adja meg A születési évét: "))
+    
+inalma=adatok[3]
+inalma.sort
+k=[]
+for i in range (len(inalma)):
+    if inalma == adatok[3][i]:
+        k.append(i)
+print("Személyek akiknek a vezetékneve [A-L] közé esik:")
+for i in range (len(adatok[0])):
+    if adatok[0][i][0]<"M":
+        print("Név:%s" %adatok[0][i])
+        print("Születési helye:%s" %adatok[1][i])
+        print("Anyja neve:%s" %adatok[2][i])
+print(k)
+        
+#bővítse ki úgy a feladatot ,hogy születési helyet is be kérsz és sorba rendezed a születési dátum szerint
