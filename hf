@@ -1,0 +1,58 @@
+#tölt fel egy listát lista elemekkel amellyekben az alábbi adatok szerepelne:
+#név születési hely, és anyja neve.Listázd ki min azon személyeknek az adatait,
+#Amelyeknek az elemei "N" betű elöt találod(A-L).
+#Az adatokat vidd be futtatási időben
+
+adatok=[[],[],[],[]]
+for i in range (3):
+    adatok[0].append(input("Név: "))
+    adatok[1].append(input("Adja meg a születési helyét: "))
+    adatok[2].append(input("Adja meg az anyja nevét: "))
+    adatok[3].append(input("Adja meg A születési évét: "))
+
+
+
+for i in range (len(adatok[3])):
+    adatok[3][i]=int(adatok[3][i])
+
+eredmeny=[[],[],[],[]]
+"""print("Személyek akiknek a vezetékneve [A-L] közé esik:")
+for i in range (len(adatok[0])):
+    if adatok[0][i][0]<"M":
+        print("Név:%s" %adatok[0][i])
+        print("Születési helye:%s" %adatok[1][i])
+        print("Anyja neve:%s" %adatok[2][i])"""
+        
+for i in range (len(adatok[0])):
+    if adatok[0][i][0]<"M":
+        eredmeny[0].append(adatok[0][i])
+        eredmeny[1].append(adatok[1][i])
+        eredmeny[2].append(adatok[2][i])
+        eredmeny[3].append(adatok[3][i])
+
+for i in range(len(eredmeny[3]),1,-1):
+    for j in range (i-1):
+        if eredmeny[3][j]>eredmeny[3][j+1]:
+            temp=eredmeny[3][j+1]
+            eredmeny[3][j+1]=eredmeny[3][j]
+            eredmeny[3][j]=temp
+
+            temp=eredmeny[0][j+1]
+            eredmeny[0][j+1]=eredmeny[0][j]
+            eredmeny[0][j]=temp
+
+            temp=eredmeny[1][j+1]
+            eredmeny[1][j+1]=eredmeny[1][j]
+            eredmeny[1][j]=temp
+
+            temp=eredmeny[2][j+1]
+            eredmeny[2][j+1]=eredmeny[2][j]
+            eredmeny[2][j]=temp
+
+print("Személyek akiknek a vezetékneve [A-L] közé esik:")
+for i in range (len(eredmeny[0])):
+        print("Név:%s" %eredmeny[0][i])
+        print("Születési helye:%s" %eredmeny[1][i])
+        print("Anyja neve:%s" %eredmeny[2][i])
+        print("Születési éve:%d" %eredmeny[3][i])
+#bővítse ki úgy a feladatot ,hogy születési helyet is be kérsz és sorba rendezed a születési dátum szerint
