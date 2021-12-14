@@ -1,0 +1,67 @@
+#Feladat:adott két lista. Fűzd össze őket indexelés szerinti sorrendben
+lista1=["A","é","ne","Ba"]
+lista2=["z","n","vem","lázs"]
+eredmeny=[]
+for i in range(len(lista1)):
+    eredmeny.append(lista1[i]+lista2[i])
+print(eredmeny)
+
+
+#megoldás
+eredmeny=[lista1[i]+lista2[i] for i in range (len(lista1))]
+
+"""
+Újdonság:adott
+zip() függvény képes több listát kezelni
+"""
+eredmeny=[i+j for i,j in zip(lista1,lista2)]
+print(eredmeny)
+
+#Feladat: Adott egy lista. Fűzd össze mindegyik elemét mindegyikkel.
+lista1=["Kedves", "Hogy","Mit"]
+lista2=["Uram/Hölgyem","van","csinál"]
+
+eredmeny=[i+""+j for i in lista1 for j in lista2]
+print(eredmeny)
+"""
+Elősször össze párosítja a lista1[0] elemét a lista2 összes elemével. Ezt a második for ciklus végzi el.
+Aztán az első for ciklus átléptet a lista1[1] elemére, ezt is összepárosítja a lista2 minden elemével,
+és így tovább
+"""
+#Feladat: Adott két lista. párosítsuk (fűzzük össze) össze az elemeket úgy,
+# hogy az első lista elemeit eredeti sorrendben vannak
+#  a második lista elemei pedig fordított sorrendben vennak
+lista1=("1","2","3","4","5")
+lista2=("10","20","30","40","50")
+eredmeny=[x+y for x,y in zip(lista1,lista2[::-1])]# Tessék átnézni a List Slicing tnanyagot!
+print(eredmeny)
+
+
+#Bővísd ki az adott listát egy allistával, hogy a harmadik indexen lévő elemet kibővíted egy sorozattal 1-5ig.
+lista =[1,5,7,[1,2],[1,2,3],9]
+#eredmeny: lista =[1,5,7,[1,2,1,2,3,4,5],[1,2,3],9]
+
+#print(lista[3])
+for i in range(1,6):
+    lista[3].append(i)
+print(lista)
+
+#Bővisd ki a lista utolsó elemét is egy 1-10-ig terjedő allistával
+
+lista[-1]=[lista[-1]]#Allistává cinálom az utolsó elemet!
+#Típuskényszerítés:
+#lista[-1] = [int(x) for x in str(lista[5])]
+for i in range(1,11):
+    lista[-1].append(i)
+print(lista)
+#Adott egy 50 elemű lista. Hozz létre egy új listát a páros számoknak és egy újat a páratlan számoknak!
+#irasd ki öket
+lista=[i for i in range(1,51)]
+print(lista)
+paros=[i for i in lista if not i%2]
+print(paros)
+paratlan=[i for i in lista if i%2]
+print(paratlan)
+#min és max keresés:erre használhatjuk a min() és max() függvényeket
+print(min(paros))
+print(max(paratlan))
