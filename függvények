@@ -1,0 +1,59 @@
+#Függvények
+
+#A függvények olyan kódrészletek (szubrutinok), amelyek elvégeznek valamilyen műveletet és annak az eredményét 
+#adják vissza kódban, fügvényhívás alkalmával.
+#A függvény bemenő értélét argumentumnak nevezzük, a kimenetén pedig maga az outpu érték van
+
+#Függvény definiálása:
+def fuggveny():
+    print("Hello World!")
+
+#fuggveny hivása
+fuggveny()
+
+# függvény argumentuma:
+def my_function(fname):
+    print(fname+" "+"Brown")
+# A függvény hívása argumentummal:
+my_function("Mr.")
+my_function("John")
+my_function("Edward")
+
+def my_name(fname, lname):
+    print(fname+" "+ lname)
+
+my_name("John","Doe")
+
+#Mi van akkor, ha az argumentumok=paraméterek száma ismeretlen számunkra?
+def my_name2(*param):
+    print("A legfiatalabb testvér: "+ param[2])
+my_name2("Ádám","Ábel","János","Imre")
+
+# A függvény visszatérési értéke
+def summ(x,y):
+    return x+y
+
+eredmeny=summ(5,3)
+print(eredmeny)
+
+#Kérj be billentyűzetről egy számot, amely csak 1,2,3 lehet. Az 1-es összeadást hajt végre,
+#A 2-es kivonást hajt végre. A 3as szorzást hajt végre. 
+#Írd meg ezet a funkciókat egy-egy függvénnyel, majd a megfelelő helyen hívd meg azokat
+# Az input számokat is a billentyűzetről add meg
+
+def osszeadas(x,y):
+    return(x+y)
+def kivonas(x,y):
+    return(x-y)
+def szorzas(x,y):
+    return(x*y)
+
+opcio=int(input("Kérlek add meg milyen műveletet akarsz elvégezni: "))
+if opcio==1:
+    print(osszeadas(int(input("Az első szám: ")),int(input("A második szám: "))))
+elif opcio==2:
+    print(kivonas(int(input("Az első szám: ")),int(input("A második szám: "))))
+elif opcio==3:
+    print(szorzas(int(input("Az első szám: ")),int(input("A második szám: "))))
+else:
+    print("Hibás input!")
