@@ -1,0 +1,77 @@
+# Készíts egy függvényt, amely megszámolja egy billentyűzetről begépelt sztringben a magánhangzókat
+def maganhangzok(mondat):
+    maganh=["a","á","e","é","i","í","o","ó","ö","ő","u","ú","ü","ű"]
+    db=0
+    for i in mondat:
+        if i in maganh:
+            db+=1
+    return db
+mondat=input("Adj meg egy mondatot! Szigorúan kisbetűkkel!")
+darab=maganhangzok(mondat)
+print("A mondatban %d darab magánhangzó található!"%darab)
+
+
+# Készíts el egy függvényt, anely kiszámítja N szám faktoriálisát (N!)
+#Pl.: 5! = 1*2*3*4*5 = 120
+def faktorialis(szam):
+    fakt=1
+    while(szam!=0):
+        fakt=fakt*szam
+        szam=szam-1
+    return fakt
+szam=int(input("Adj meg egy számot: "))
+print("Az adott szám faktoriálisa: %d"%faktorialis(szam))
+
+
+# Írj egy függvény, amaly egy mondatban megszámolja a kis- és nagybetűket.
+#Kis- és nagy
+
+
+def string_test(s):
+    num=[0,0]#nagybetű, kisbetű
+    for i in s:
+        if i.isupper():
+            num[0]+=1
+        elif i.islower():
+            num[1]+=1
+        else:
+            pass
+    return num
+
+mondat=input ("Add meg a mondatot kis- és nagybetűkkel keverve: ")
+eredmeny= string_test(mondat)
+print("A mondatban %d nagybetű és %d kisbetű van!"%(eredmeny[0], eredmeny[1]))
+
+
+#Készíts egy fügvény, amely kiszámolja a képernyőre a Pascal háromszöget N magasságban.
+
+"""
+    1
+   1 1
+  1 2 1
+ 1 3 3 1
+1 4 6 4 1
+
+"""
+def pascal_haromszog(n):
+    sor=[1]
+    y=[0]
+    for x in range(n):
+        print(sor)
+        sor=[b+j for b,j in zip (sor+y, y+sor)]
+    return n>=1
+n=int(input("Add meg a Pascal háromszög magasságát: "))
+pascal_haromszog(n)
+
+
+# Írj egy függvényt, amely ellenörzi, hogy az adott függvény tökéletes szám-e!
+#tökéletes számok, azok , amelyek egyenlők az összes osztójának az összegével.
+#Pl.: az első tökéletes szám a 6, mivel az osztói az 1,2,3 és 6=1+2+3
+#A következő tökéletes szám a 28, mivel az ő osztói a 1, 2, 4, 7, 14 és 28= 1+2+4+7+14
+def tokeletes_szam(n):
+    osszkeg=0
+    for i in range(1,n):
+        if n % i ==0:
+            osszeg=osszeg+i
+    return osszeg==n
+print(tokeletes_szam(6))
