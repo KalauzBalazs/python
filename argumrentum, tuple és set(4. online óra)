@@ -1,0 +1,143 @@
+# Függvények argumentumai és a kulcsszavak
+# Használhatunk az argumentumok értéke helyett kulcsszavakat is.
+
+def legidosebb(fiu1,fiu2,fiu3):
+    print("A legidősebb fiu "+fiu2)
+
+legidosebb(fiu1="Erik",fiu2="Ádám",fiu3="Tamás")
+
+# Hogy nézne ki kulcsszavak nélkül?
+
+def legidosebb2(fiu):
+    print("A legidősebb fiu "+fiu)
+legidosebb2("Botond")
+
+# Megadhatok az argumentumoknak alapértelmezett értéket is:
+def orszag(orszag="Magyarország"):
+    print("Jelenleg "+orszag+"-on(ban) tartózkodom")
+
+orszag("Ausztria")
+orszag("Spanyolország")
+orszag()
+
+
+# A függvény argumentumaként listát is átadhatok:
+def gyumolcs(gyumi):
+    for i in gyumi:
+        print(i)
+gyumi=["alma","körte","banán","narancs"]
+gyumolcs(gyumi)
+
+
+# ÚJ TÍPUS: TUPLE
+
+# Különböző elemeket tud tárolni, hasonlóan a listákhoz,de az elemek sorrendje nem változtatható.
+# Ha egyszer egy tuple elkészül akkor az már nem módosítható, akkor már nem módosítható, tehát nem tudunk sem hozzáadni, sem törölni.
+
+tuple1=("alma","körte","banán","narancs")
+print(tuple1)
+
+# A tuple adatokban megengedett az elemek dupla előfordulása.
+# Ugyan úgy indexelve vannak az elemek mint a listákban és 0-tól n-1-ig van a számozásuk.
+
+print(type(tuple1))
+
+tuple2=("alma",)
+print(type(tuple2))
+tuple3=("alma")
+print(type(tuple3))
+
+# Ezen kívül meg létrehozhatju a tuple-t a "tuple" konstruktorral is.
+
+tuple4 = tuple(("alma","körte","barack"))
+print(tuple4)
+
+
+# Tehát a tuple nem változtatható, azonban van egy kiskapu.
+# Listává változtatjuk egy típuskényszerítéssel, najd a változtatás után vissza alakítjuk.
+
+tuple1=("alma","körte","barack","banán")
+gyumi=list(tuple1)
+gyumi[1]="kiwi"
+tuple1=tuple(gyumi)
+print(tuple1)
+
+# Tuple teljes kitörlése:
+del tuple1
+# print(tuple1)
+
+
+tuple1=("alma","körte","barack","banán")
+for i in tuple1:
+    print(i)
+
+tuple2=(1,2,3,4)
+# Tuple összefűzése
+tuple3=tuple1+tuple2
+print(tuple3)
+#Tuple sokszorosítása
+tuple4=tuple1*2
+print(tuple4)
+tuple5=tuple2*2
+print(tuple5)
+# adott elem előfordulása a tuple-ben
+print(tuple5.count(1))
+# keresett elem indexe
+print(tuple4.index("banán"))
+
+
+# ÚJ TÍPUS: HALMAZOK (sets)
+
+# Nincs sorrendiség, nincs indexelés, nem változtatható (azzal a kikötéssel, hogy törölni és hozzáadni lehet)
+
+halmaz={"alma","körte","banán","barack",1,2,3,4}
+print(halmaz)
+print(halmaz)
+print(halmaz)
+
+#Nem engedélyezi a duplikált elemeket
+
+print(type(halmaz))
+
+# Halmazok létrehozásához használhatjuk a "set konstruktort is."
+
+halmaz2= set((1,2,3,4,"a","b","c"))
+print(type(halmaz2))
+print(halmaz2)
+
+# halmaz bejárása:
+for i in halmaz2:
+    print(i)
+
+# egy adott elem ellenörzése, vagy lekérése:
+
+print("körte" in halmaz)
+halmaz.add("mandarin")
+print(halmaz)
+
+# a halmazhoz hozzáadhatunk elemeket egy másik halmazból:
+halmaz.update(halmaz2)
+print(halmaz)
+
+# a halmazhoz nem csak másik halmazt tudunk hozzá rendelni, de bármelyik másik összetett adattípust is. pl lista, tuple
+tuple1=("autó","kerékpár","roller","szán")
+halmaz.update(tuple1)
+print(halmaz)
+print(type(halmaz))
+# törlés a halmazból:
+halmaz.remove(4)
+print(halmaz)
+halmaz.discard(1)
+print(halmaz)
+# utolsó elem törlése a halmazból
+halmaz.pop()
+print(halmaz)
+halmaz.pop()
+print(halmaz)
+
+# üressé töröljük a halmazt, nem ki töröljük:
+halmaz.clear()
+print(halmaz)
+# tejles törlés
+del halmaz
+print(halmaz)
