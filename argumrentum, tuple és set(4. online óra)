@@ -141,3 +141,36 @@ print(halmaz)
 # tejles törlés
 del halmaz
 print(halmaz)
+
+
+
+# Írj egy programot amely kkét játékossal játszik
+# Elősször az elő játéko dob az "x" gomb megnyomássával ,majd a második
+# játéko dob az "y" gomb megnyomáával.A számokat random generátorral kell ellőállítani. Maj írja ki a program, 
+#hogy melyik játékos nyert. Az nyer melyik nagyobbt dob.
+#Valósíd meg fügvény segítségével a programot
+# program fusson addig amíg ki nem lépünk a q gombl
+import random
+
+def jatek():
+    jatekosok=["x","y"]
+    while (input("Kezd el a játékot! Kilépéshez nyomd meg a q gombot."))!="q":
+        x=input("Az első játékos dob, nyomd meg az x gombot: ")
+        while x!=jatekosok[0]:
+            print("Rossz gombot nyomtál meg!")
+            x=input("Az első játékos dob, nyomd meg az x gombot!")
+        szam1=random.randint(1,6)
+            
+        y=input("A második játékos dob, nyomd meg az y gombot:")
+        while y!=jatekosok[1]:
+            print("Rossz gombot nyomtál meg!")
+            y=input("A máodik játékos dob, nyomd meg az y gombot!")
+        szam2=random.randint(1,6)
+        print("Az első szám: %d \nA máodik zám: %d" %(szam1,szam2))
+        if szam1>szam2:
+            print("Az eslő játékos nyert.")
+        elif szam2>szam1:
+            print("A második játékos nyert!")
+        else:
+            print("Döntetlen!")
+jatek()
