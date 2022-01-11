@@ -166,7 +166,7 @@ def jatek():
             print("Rossz gombot nyomtál meg!")
             y=input("A máodik játékos dob, nyomd meg az y gombot!")
         szam2=random.randint(1,6)
-        print("Az első szám: %d \nA máodik szám: %d" %(szam1,szam2))
+        print("Az első szám: %d \nA második szám: %d" %(szam1,szam2))
         if szam1>szam2:
             print("Az eslő játékos nyert.")
         elif szam2>szam1:
