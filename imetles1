@@ -1,0 +1,27 @@
+"""Írjunk programot amely lekér személyi adatokat a felhasználótol.
+be kell kérni a nevet és a születési évet! Majd írja ki  a legfiatalabb és a legidősebb felhználó nevét."""
+def legfiatalabb(adatok):
+    legfiatalabb=min(adatok[1])
+    return adatok[1].index(legfiatalabb)
+def legidosebb(adatok):
+    legidosebb=max(adatok[1])
+    return adatok[1].index(legidosebb)
+    
+adatok=[[],[]]
+bemenet=input("Szeretnél datokat megadni? (i/n)")
+while bemenet=="i":
+    nev=input("Ad meg a teljes nevet: ")
+    adatok[0].append(nev)
+    szulev=int(input("Add meg a születési évet: "))
+    adatok[1].append(szulev)
+    bemenet=(input("Szeretnél datokat megadni? (i/n)"))
+legfiatalabb=adatok[0][legfiatalabb(adatok)]
+legidosebb=adatok[0][legidosebb(adatok)]
+print("A legidősebb személy: %s"%legidosebb)
+print("A legfiatalab személy: %s"%legfiatalabb)
+
+"""HÁzi FELDDAT!
+készíts egy mőba játékot 3x3as táblán z nyer aki kirakja a 
+3 egyforma jelet valamely irányban.Két játéko játszik. Úgy lehet 
+Az X és az O jelet, hogy megadjuk azok kordinátáit
+"""
