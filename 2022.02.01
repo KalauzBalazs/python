@@ -64,3 +64,87 @@ elif telSzam[-9:-7]=='80':
 Egészítsd ki a programot, hogy kiírja melyik szolgáltatóból hány darab 
 érkezett a bemeneten. Ehhez több adat bevitelét kell lehetővé tenni!
 '''
+
+
+
+
+'''Készíts egy programot, amely mobiltelefonszámokat olvas be a standard
+bemenetről. A formailag elfogadható számok:
++36XXYYYYYYY vagy 0036XXYYYYYYY
+A program írja ki a képernyőre minden bevitel után, hogy az aktuálisan 
+begépelt szám melyik szolgáltatóhoz tartozik.
+A 40-es hívószám: kékszám
+A 80-as hívószám: zöldszám
+A 20-as hívó: Telenor
+A 30-as hívó: Telekom
+Az 50-es hívó: Digi
+A 70-es hívó: Vodafone
+Ha a megadott szám formailag hibás, akkor figyelmeztesse a felhasználót és kérje
+úrja a számot!
+A formai ellenőrzést végezd el egy függvény segítségével!
+'''
+
+szamlalo=[0,0,0,0,0,0]
+def ellenoriz(telSzam):
+    #elősször ellenőrizzük a sztring hosszát
+    while not (len(telSzam)==12 or len(telSzam)==13 or telSzam==""): 
+        print(len(telSzam))
+        print("A szám hosszúsága nem megfelelő!")
+        telSzam=input("""Adj meg egy formailag helyes mobilszámot!\nA formailag elfogadható számok: +36XXYYYYYYY vagy 0036XXYYYYYYY\n""")    
+    #ellenőrizzük hogy megfelelően kezdődjön
+    while not (telSzam[0:3]=='+36' or telSzam[0:4]=='0036' or telSzam==""):
+        print("A szám '+36'-tal vagy '0036'-tal kell, hogy kezdődjön")
+        telSzam=input("""Adj meg egy formailag helyes mobilszámot!\nA formailag elfogadható számok: +36XXYYYYYYY vagy 0036XXYYYYYYY\n""")
+    #végül ellenőrizzük, hogy minden számjegy szám legyen
+    if telSzam!="":
+        for i in range(-1,-11,-1):
+            if telSzam[i].isdecimal():
+                seged=True
+            else:
+                print("Nem megfelelő szám!")
+                seged=False
+                break
+        #ha valamelyik karakter nem szám, akkor újra kérjük
+        while not seged:
+            telSzam=input("""Adj meg egy formailag helyes mobilszámot!\nA formailag elfogadható számok: +36XXYYYYYYY vagy 0036XXYYYYYYY\n""")
+            for i in range(-1,-11,-1):
+                if telSzam[i].isdecimal():
+                    seged=True
+                else:
+                    print("Nem megfelelő szám!")
+                    seged=False
+                    break
+        #végül vissza adjuk az ellenőrzött sztringet
+    return telSzam
+
+#itt kezdődik maga a program
+telSzam=None
+while telSzam!="":
+    telSzam=input("""Adj meg egy formailag helyes mobilszámot!\nA formailag elfogadható számok: +36XXYYYYYYY vagy 0036XXYYYYYYY\n""")
+    #függvényhívással ellenőrizzük
+    telSzam=ellenoriz(telSzam)
+    #végül kategorizáljuk szolgáltatók szerint
+    if telSzam[-9:-7]=='20':
+        print("Az adott szám a Telenor szolgáltatóhoz tartozik!")
+        szamlalo[0]+=1
+    elif telSzam[-9:-7]=='30':
+        print("Az adott szám a Telekom szolgáltatóhoz tartozik!")
+        szamlalo[1]+=1
+    elif telSzam[-9:-7]=='50':
+        print("Az adott szám a Digi szolgáltatóhoz tartozik!")
+        szamlalo[2]+=1
+    elif telSzam[-9:-7]=='70':
+        print("Az adott szám a Vodafone szolgáltatóhoz tartozik!")
+        szamlalo[3]+=1
+    elif telSzam[-9:-7]=='40':
+        print("Az adott szám egy kékszám!")
+        szamlalo[4]+=1
+    elif telSzam[-9:-7]=='80':
+        print("Az adott szám egy zöldszám")
+        szamlalo[5]+=1
+
+    '''HÁZI FELADAT:
+    Egészítsd ki a programot, hogy kiírja melyik szolgáltatóból hány darab 
+    érkezett a bemeneten. Ehhez több adat bevitelét kell lehetővé tenni!
+    '''
+print("A Telenor szolgáltatóhoz %d szám tartozik.\nA Telekom szolgáltatóhoz %d szám tartozik.\nA Digi szolgáltatóhoz %d szám tartozik.\nA Vodafone szolgáltatóhoz %d szám tartozik.\n%d kék szám van.\n%d zöldszám van."%(szamlalo[0],szamlalo[1],szamlalo[2],szamlalo[3],szamlalo[4],szamlalo[5]))
