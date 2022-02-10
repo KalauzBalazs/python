@@ -1,0 +1,30 @@
+-pontosan 6 számjegyből állhat 
+-ha az első 5 zámjegy összegét 6-talelosztva a maradék megegyyezik az utolsó számjegyel
+PL:.123453 egy érvényes kód
+Ha a kód nem érvényes, akkor jelezze  program hibaüzenettel!
+Q krkter érkezésekor lépjen ki  progrmból egyébként kérje folyamatoan"""
+bemenet=(input("Add meg a kódot: "))
+while bemenet!="Q":        
+    while len(bemenet)!=6 and bemenet!="Q":
+        bemenet=input("Rossz input add meg újra a kódot: ")
+    seged=True
+    while seged:
+        for i in bemenet:
+            if i.isnumeric():
+                seged=False
+            else:
+                seged=True
+                bemenet=("Csak szám lehet a meg újra: ")
+    n=0        
+    utolso=int(bemenet[5])
+    seged=True
+    while seged and bemenet!="Q":
+        for i in range(5):
+            n+=int(bemenet[i])
+        print(n)
+        if n%6==utolso:
+            seged=False 
+        else:
+            seged=True
+            bemenet=input("Rossz inpout add meg újra: ")
+    bemenet=input("Add meg a következő kódot: ")
