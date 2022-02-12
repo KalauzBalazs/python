@@ -1,30 +1,46 @@
--pontosan 6 számjegyből állhat 
--ha az első 5 zámjegy összegét 6-talelosztva a maradék megegyyezik az utolsó számjegyel
-PL:.123453 egy érvényes kód
-Ha a kód nem érvényes, akkor jelezze  program hibaüzenettel!
-Q krkter érkezésekor lépjen ki  progrmból egyébként kérje folyamatoan"""
-bemenet=(input("Add meg a kódot: "))
-while bemenet!="Q":        
-    while len(bemenet)!=6 and bemenet!="Q":
-        bemenet=input("Rossz input add meg újra a kódot: ")
-    seged=True
-    while seged:
-        for i in bemenet:
-            if i.isnumeric():
-                seged=False
-            else:
-                seged=True
-                bemenet=("Csak szám lehet a meg újra: ")
-    n=0        
-    utolso=int(bemenet[5])
-    seged=True
-    while seged and bemenet!="Q":
-        for i in range(5):
-            n+=int(bemenet[i])
-        print(n)
-        if n%6==utolso:
-            seged=False 
-        else:
-            seged=True
-            bemenet=input("Rossz inpout add meg újra: ")
-    bemenet=input("Add meg a következő kódot: ")
+''A program árucikkek kódjait kéri be. Kérd be a felhasználótól
+az árucikk kódját! Az azonosító kód csak akkor érvénes ha, ha megfelel a
+követelményeknek:
+- pontosan 6 számjegyből állhat
+- ha első 5 számjegy összegét 6-tal elosztva a maradék megegyezik az utolsó
+számjeggyel
+Pl.: 123453 egy érvényes kód
+Ha a kód nem érvényes, akkor jelezze a program hibaüzenettel!
+'Q karakter érkezésekor lépjn ki a programból, egyébként kérjen folyamatosan
+kódokat.
+'''
+
+def ellenoriz(bemenet):
+    while (not (len(bemenet)==6 and bemenet.isdigit())):
+        print("A kód hosszúsága vagy karakterei nem megfelelők")
+        return False
+    return True
+
+def helyese (bemenet):
+    osszeg=0
+    for i in range(len(bemenet)-1):
+        osszeg=osszeg+int(bemenet[i])
+    maradek=osszeg%6
+    while maradek!=int(bemenet[-1]):
+        print("A kód nem felel meg a második kritériumnak")
+        return False
+    return True
+
+# itt kezdődik a fő program
+
+kodok=[]
+bemenet=input("Add meg a termékkódot: ")
+while bemenet != 'q':
+    while (not (ellenoriz(bemenet) and helyese(bemenet))):
+        bemenet=input("Add meg újra a termékkódot helyesen: ")
+        if bemenet=='q':
+            break
+        break
+    if bemenet=='q':
+        break
+    else:
+        kodok.append(bemenet)
+        bemenet=input("Add meg a termékkódot: ")
+
+print("Kilép!")
+print(kodok)
