@@ -1,6 +1,6 @@
-bemenet=input("Adj meg egy max 20 kar hosszú stringet.")
+"""bemenet=input("Adj meg egy max 20 kar hosszú stringet: ")
 while len(bemenet)>20:
-    bemenet=input("Adj meg egy max 20 kar hosszú stringet.")
+    bemenet=input("Adj meg egy max 20 kar hosszú stringet: ")
 magan= ["a", "á", "e", "é", "i", "í","o", "ó", "ö", "ő", "u", "ú", "ü", "ű", "y"]
 lista=[i for i in bemenet]
 print(lista)
@@ -8,4 +8,67 @@ n=0
 for i in lista:
     if i in magan:
         n+=1
-print("A magánhangzók száma %d"%n)
+print("A magánhangzók száma: %d"%n)"""
+
+
+"""x=int(input("Add meg a számot: "))
+lista=[(i+1)**3 for i in range(x)]
+print(lista)"""
+
+"""bemenet=(input("Adj meg egy stringe csupa kis betűvel: "))
+print(len(bemenet),bemenet.isdigit(),bemenet.isupper())
+while len(bemenet)>10 or bemenet.isdigit() or bemenet.isupper():
+    bemenet=input("Hibás szöveg add meg újra: ")
+for i in range(0,len(bemenet),2):
+        print(i)
+        for j in bemenet:
+            if j==bemenet[i]:
+                j=bemenet[i].isupper
+print(bemenet)
+
+x="alddd"
+x.replace("a","4")
+print(x)
+x.upper()
+print(x.upper())"""
+
+
+"""
+szoveg2=[]
+szoveg=input("Adj meg egy max 10 karakter hosszú ztringet, csupa ki betűkkel! ")
+while not(len(szoveg)<=10 and szoveg.isalpha):
+    szoveg=input("Adj meg egy max 10 karakter hosszú ztringet, csupa ki betűkkel! ")
+
+for i in range(len(szoveg)):
+    if not i%2:
+        szoveg2.append(szoveg[i])
+    else:
+        szoveg2.append(szoveg[i].upper())
+szoveg="".join(szoveg2)
+print(szoveg)"""
+
+
+db=["JKL123","ABC987","QWE613","RTZ654"]
+bemenet=input("Add meg a rendzámot: ")
+seged,seged2=True,True
+while seged or seged2:
+    if len(bemenet)==6:
+        for i in range(3):
+            print(i)
+            print(bemenet[i].isnumeric())
+            print(not bemenet[i].isupper)
+            if bemenet[i].isnumeric() or not bemenet[i].isupper:
+                seged=True
+            else:
+                seged=False
+        for i in range(3,6):
+            if  not bemenet[i].isdigit:
+                seged2=True
+            else:
+                seged2=False
+        print(seged,seged2)
+        if seged or seged2:
+            bemenet=(input("Nem jó a rendszám"))
+    else:
+        bemenet=(input("Nem jó a rendszám"))
+print (bemenet)
