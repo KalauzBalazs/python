@@ -1,0 +1,11 @@
+bemenet=input("Adj meg egy max 20 kar hosszú stringet.")
+while len(bemenet)>20:
+    bemenet=input("Adj meg egy max 20 kar hosszú stringet.")
+magan= ["a", "á", "e", "é", "i", "í","o", "ó", "ö", "ő", "u", "ú", "ü", "ű", "y"]
+lista=[i for i in bemenet]
+print(lista)
+n=0
+for i in lista:
+    if i in magan:
+        n+=1
+print("A magánhangzók száma %d"%n)
