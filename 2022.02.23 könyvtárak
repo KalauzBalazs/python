@@ -1,0 +1,181 @@
+# KÖNYVTÁRAK
+
+konyvtar2 = {
+    "marka": "Ford",
+    "model": "Mustang",
+    "gyev": 1964,
+    "gyev": 2000,
+    "allapot": "jó"
+}
+
+'''Amíg a listában a listaelem indexével hivatkozunk, addig
+a könyvtárakban hivatkozhatunk a könyvtárelem kulcsával is.'''
+
+# teljes könyvtár kiíratása:
+print(konyvtar2)
+
+# egy könyvtár elem kiíratása:
+print(konyvtar2["model"])
+
+# a könyvtár hossza:
+print(len(konyvtar2))
+
+konyvtar = {
+    "marka": ["Ford", "Porsche", "Opel"],
+    "model": ["Mustang", "Cayane", "Frontera"],
+    "gyev": [1964, 2019, 1997],
+    "allapot": ["jó", "újszerű", "felújítandó"]
+}
+
+# egy könyvtár elem kiíratása:
+print(konyvtar["model"][0])
+# használhatjuk még a get() metódust:
+x=konyvtar.get("model")
+print(x)
+# A Mustang elérése:
+x=konyvtar.get("model")[0]
+print(x)
+
+# lekérdezem a könyvtár kulcsait
+y=konyvtar.keys()
+print(y)
+
+# lekérdezhetem az értékeket:
+y=konyvtar.values()
+print(y)
+
+# módosítás után frissül az y
+konyvtar["szin"]=["piros", "fekete", "sárga"]
+print(y)
+
+# az items() metódus visszaadja a könyvtár összes elemét egy tuppleben
+x=konyvtar.items()
+print(x)
+
+# módisítom az egyik értéket
+konyvtar["gyev"][0]="1968"
+print(x)
+
+# Hogyan tudjuk leelenőrizni egy kulcs meglétét a könyvtárban?
+if "model" in konyvtar:
+    print("Igen, a keresett kulcs a könyvtárban található!")
+
+# egy adott elem kitörlése a könyvtárból:
+konyvtar2.pop("gyev")
+print(konyvtar2)
+konyvtar2["gyev"] = 1964
+del konyvtar2["model"]
+print(konyvtar2)
+# az utoljára beszúrt elemet akarom törölni:
+konyvtar2.popitem()
+print(konyvtar2)
+
+# a teljes könyvtár törlése: del konyvtar2
+
+# a teljes könyvtár kiürítése:
+x = konyvtar2.clear()
+print(x)
+print(konyvtar2)
+del konyvtar2 # kitöröltem a létezését is!
+#print(konyvtar2)
+
+
+
+
+'''
+Kérj be a billentyűzetről személyes adatokat: név, szül.év, anyja neve, lakhely(település). 
+Mentsd el az adatokat egy könyvtárban a megfelelő kulcsokkal. 
+Majd írasd ki a 2000-nél később született személyek nevét és születési évét. Kérj be legalább 5 adatot!
+'''
+
+
+adatkulcsok = ['nev', 'szul_ev', 'anyja_neve', 'lakhely']
+adatok = {
+    adatkulcsok[0]: [],
+    adatkulcsok[1]: [],
+    adatkulcsok[2]: [],
+    adatkulcsok[3]: []
+}
+
+for i in range(5):
+    for j in range(len(adatok)):
+        adatok[adatkulcsok[j]].append(input('Add meg a ' + adatkulcsok[j] + " kulcshoz tartozó értéket: "))
+
+for i in range(len(adatok[adatkulcsok[1]])):
+    if int(adatok[adatkulcsok[1]][i]) > 2000:
+        print(adatok[adatkulcsok[0]][i])
+        print(adatok[adatkulcsok[1]][i])
+
+        
+        
+        
+        
+        
+konyvtar = {
+    "marka": ["Ford", "Porsche", "Opel"],
+    "model": ["Mustang", "Cayane", "Frontera"],
+    "gyev": [1964, 2019, 1997],
+    "allapot": ["jó", "újszerű", "felújítandó"]
+}
+
+# iteráció a könyvtáron:
+for i in konyvtar:
+    print(i) # a kulcsokat adja vissza
+    print(konyvtar[i]) # az értékeket adja vissza
+
+for i in konyvtar.keys(): # ugynúgy a kulcsokat adja vissza
+    print(i)
+
+for i in konyvtar.values(): # ugyanúgy az értékeket adja vissza
+    print(i)
+
+for i,j in konyvtar.items():
+    print(i) # az i-hez a kulcsokat rendeli
+    print(j) # a j-hez az értékeket rendeli
+
+
+# a könyvtár lemásolása:
+ujkonyvtar = konyvtar.copy()
+print(ujkonyvtar)
+
+
+# Létre tudunk hozni könyvtárat a könyvtárban:
+
+k1 = {
+    "nev": "ertek",
+    "nev1": "ertek1"
+}
+
+k2 = {
+    "nev": "ertek",
+    "nev1": "ertek1"
+}
+
+konyvtar = {
+    "k1": k1,
+    "k2": k2
+}
+
+print(konyvtar)
+
+
+
+
+
+"""Módosítsd az előző feladatot, hogy a személyes adatok egy-egy al-könyvtárba kerüljenek"""
+
+konyvtar={
+    "nev":{},
+    "szulev":{},
+    "anyja":{},
+    "lakhely":{}
+}
+for i in range(5):
+    konyvtar["nev"][i]=input("Add meg a nevet: ")
+    konyvtar["szulev"][i]=input("Add meg a születési évet: ")
+    konyvtar["anyja"][i]=input("Addja meg az anyja nevét: ")
+    konyvtar["lakhely"][i]=input("Add meg a lakhelyet: ")
+print(konyvtar)
+for i in range(len(konyvtar)):
+    if int(konyvtar["szulev"][i])>2000:
+        print(konyvtar["nev"][i],konyvtar["szulev"][i])
