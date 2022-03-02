@@ -1,0 +1,96 @@
+# FÁJLKEZELÉS
+
+"""lehetőség van létrehozni, megnyitni, módosítani és törölni a fájlokat
+
+A legfontosabb függvény, amellyel a fájlokat kezeljük, az open().
+Az open() függvénynek két paramétere van:
+- fájlnév
+- művelet, amit a fájllal csinálni szeretnénk
+
+Ez a művelet lehet:
+- 'r' - olvasás (read) - Megnyitja olvasásra, és hibát dob ha nem létezik.
+- 'a' - hozzáfűzés (append) - Megnyitja hozzáfűzésre, és létrehozza, amennyiben nem létezik. 
+- 'w' - írás (write) - Létrehozza ha nem létezik, és írásra nyitja ha létezik.
+- 'x' - létrehozás (create) - Létrehozza, és hibát dob ha a fájl létezik.
+
+
+A művelethez még kapcsolhatunk egy paramétert, amely a fájl típusát mutatja meg:
+- 't' - szöveg (text)
+- 'b' - bináris (binary)
+
+"""
+
+import os
+
+f = open("valami.txt", "w") # megnyitom írásra a fájlt
+f.write("Ez egy random szoveg!") # beleírok a fájlba
+f.close() # becsukom a fájlt
+
+f = open("valami.txt", "w") # újranyitom a fájlt írásra
+f.write("Hoppá elrontottam a szöveget!\n") # beleírok egy másik szöveget, ekkor felülírja a korábbit
+f.close() # becsukom
+
+f = open("valami.txt", "a") # megnyitom hozzáfűzésre a fájlt
+f.write("Ez egy random szoveg!") # beleírok a fájlba
+f.close() # becsukom a fájlt
+
+f = open("valami.txt", "r") # megnyitom olvasásra
+x1=f.read() # kiolvasom a fájl tartalmát
+print(x1)
+f.close()
+
+f = open("valami.txt", "r")
+x2=f.read(10) # kiolvasom az első 10 karaktert
+print(x2)
+f.close()
+
+f = open("valami.txt", "r")
+x3=f.read(3) # kiolvasom az első 10 karaktert
+print(x3)
+f.close()
+
+f = open("valami.txt", "r")
+x4=f.readlines() # kiolvasom az első sort
+print(x4)
+x5=f.readlines() # kiovassa a következő sort
+print(x5)
+f.close()
+
+os.remove("valami.txt")
+
+
+
+#FELADAT
+
+"""Írj egy programot amely a billentyűzetről kér be adatokat és beleírja egy fájlba. 
+A fájlnak készíts egy fejlécet, ami három értéket tartalmaz:
+- Név:
+- Szül. év:
+- Lakhely:
+
+Az egyes adatok legyenek Tabbal elválasztva, és minden új sorba egy új személy adata kerüljön.
+"""
+
+f = open("adatok.txt", "wt") # megnyitom írásra, ha nem létezik, akkor létrehozza
+f.write("Név: \t\t Szül. év: \t\t Lakhely:\n") # megcsinálom a fejlécet
+x=int(input("Hány adatot szeretnél bevinni? "))
+for i in range(x):
+    f.write(input("Add meg a nevet: ")+"\t\t")
+    f.write(input("Add meg a születési évet: ")+"\t\t")
+    f.write(input("Add meg a települést: ")+"\n")
+f.close()
+
+#bővítés: szeretnénk-e további adatokat megadni?
+x=input("Szeretne-e további adatokat hozzáadni? (i/n)")
+while x=='i':
+    f = open("adatok.txt", "at")
+    f.write(input("Add meg a nevet: ")+"\t\t")
+    f.write(input("Add meg a születési évet: ")+"\t\t")
+    f.write(input("Add meg a települést: ")+"\n")
+    x=input("Szeretne-e további adatokat hozzáadni? (i/n)")
+f.close()
+
+#kiíratás:
+f = open("adatok.txt", "rt")
+print(f.read())
+f.close()
