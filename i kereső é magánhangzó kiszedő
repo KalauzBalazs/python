@@ -1,0 +1,30 @@
+
+def ic (fajl):
+    lista=[]
+    n=0
+    sorszam=0
+    for i in fajl.readlines():
+        sorszam+=1
+        if i[-2]=="i":
+            n+=1
+            lista.append(sorszam)
+    return(n,lista)
+def cop(fajl):
+    maganhangzok=["a","á","e","é","i","í","o","ó","ö","ő","u","ú","ü","ű","y"]
+    fajl2=open("fajl2.txt","w")
+    for i in fajl.readlines():
+        for j in i:
+            if not (j in maganhangzok):
+                fajl2.write(j)
+    fajl2.close()
+fajl=open("ebetu.txt", "r", encoding="utf-8")
+iksz,sorsz=ic(fajl)   
+print("A szövegben %ddb i betű ta lálható!"%iksz)
+for i in range(len(sorsz)):
+    print("A(z) %d. sor i betűvel végződik. "%sorsz[i])
+fajl.close()
+fajl=open("ebetu.txt", "r", encoding="utf-8")
+cop(fajl)
+fajl=open("fajl2.txt", "r")
+print(fajl.read())
+fajl.close()
