@@ -1,0 +1,29 @@
+f=open("03-16.txt","r",encoding="utf-8")
+x=open("03-16c.txt","w",encoding="utf-8")
+irasj=(".","!","?")
+lista=[i for i in f.read()]
+for i in range(len(lista)):
+    if i<len(lista)-1:
+        if lista[i] in irasj:
+            lista[i]=lista[i]+"\n"
+            x.write(lista[i])
+            lista.remove(lista[i+1])
+        else:
+            x.write(lista[i])
+x.close()
+x=open("03-16c.txt","r",encoding="utf-8") 
+print(x.read())
+x.close()
+x=open("03-16c.txt","r",encoding="utf-8") 
+magan=["a","e","i","o","u"]
+lista=[i.lower() for i in x.read()]
+n=0
+for i in lista:
+    if i in magan:
+        n+=1
+print("%d magánhangzó van."%n)
+if n%2==0:
+    print("A magánhangzók száma páros.")
+else:
+    print("A magánhangzók száma páratlan.")
+x.close()
