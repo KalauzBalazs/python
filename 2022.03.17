@@ -1,0 +1,25 @@
+import csv
+
+"""napok=["Hétfő","Kedd","Szerda","Csütörtök","Péntek"]
+with open("nyilvantartas.csv","w",newline="") as f:
+    irott=csv.writer(f,delimiter=";")
+    irott.writerow(["","Munkaidő kezdete","Munkaidő vége","Ledolgozott órák összesen"])
+    for i in range(5):
+        print("%s-i nap"%napok[i])
+        kezdet=(int(input("Add meg a munka idő kezdetét:")))
+        veg=(int(input("Add meg a munka idő végét:"))) 
+        irott.writerow([napok[i],kezdet,veg,veg-kezdet])"""
+hetio=0
+with open("nyilvntartas.csv","r") as f:
+    olvasott=csv.reader(f)
+    for i in olvasott:
+        for j in i:
+            j=int(j)
+            print(j[-1])
+            print(type(j))
+            print(j.isdigit())
+            if j.isnumeric():
+                print(j[-1])
+                hetio+=(j[-1])
+
+print("A heti összes ledolgozott óra száma %d"%hetio)
