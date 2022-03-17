@@ -10,16 +10,12 @@ with open("nyilvantartas.csv","w",newline="") as f:
         veg=(int(input("Add meg a munka idő végét:"))) 
         irott.writerow([napok[i],kezdet,veg,veg-kezdet])"""
 hetio=0
-with open("nyilvntartas.csv","r") as f:
+with open("nyilvantartas.csv","r") as f:
     olvasott=csv.reader(f)
     for i in olvasott:
         for j in i:
-            j=int(j)
-            print(j[-1])
-            print(type(j))
-            print(j.isdigit())
-            if j.isnumeric():
+            if j[-1].isnumeric():
                 print(j[-1])
-                hetio+=(j[-1])
+                hetio+=int(j[-1])
 
 print("A heti összes ledolgozott óra száma %d"%hetio)
