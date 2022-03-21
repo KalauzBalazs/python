@@ -19,3 +19,43 @@ with open("nyilvantartas.csv","r") as f:
                 hetio+=int(j[-1])
 
 print("A heti összes ledolgozott óra száma %d"%hetio)
+'''
+Írj egy programot, amely létrehoz egy munkaidő nyilvántartást, majd mentsd ki
+az adatokat egy nyilvantartas.csv fájlba. A táblázat így nézzen ki a fájlban:
+Az adatokat (munkaidő kezdete és vége) kérd be billentyűzetről! A ledolgozott
+órákat pedig számolja ki a program!
+
+          | Munkaidő kezdete |  Munkaidő vége  |  Ledolgozott órák összesen
+Hétfő     |       8          |       14        |             6  
+Kedd      |       6          |       14        |             8
+Szerda    |      ...         |       ...       |            ...
+Csütörtök |      ...         |       ...       |            ...
+Péntek    |      ...         |       ...       |            ...
+'''
+
+import csv
+fejlec=["", "Munkaidő kezdete", "Munkaidő vége", "Ledolgozott órák"]
+napok=["Hétfő", "Kedd", "Szerda", "Csütörtök", "Péntek"]
+
+with open("nyilvantartas.csv", "w", newline="") as csvfajl:
+    irottfajl=csv.writer(csvfajl, delimiter=";")
+    irottfajl.writerow([fejlec[i] for i in range(len(fejlec))])
+    for i in range(len(napok)):
+        print(napok[i]+":")
+        kezdet=int(input("Mikor érkeztél? "))
+        vege=int(input("Mikor távoztál? "))
+        irottfajl.writerow([napok[i], kezdet, vege, vege-kezdet])
+
+"""Egészitsd ki úgy a programot, hogy kiírja a heti összes ledolgozott órát!
+Az adatokat olvasd ki a fájlból!"""
+
+with open("nyilvantartas.csv", "r") as csvfajl:
+    osszes=0
+    olvasottfajl=csv.reader(csvfajl)
+    for sor in olvasottfajl: 
+        oszlop=sor[0].split(";")
+        if oszlop[0]=="":
+            pass
+        else:
+            osszes+=int(oszlop[3])
+    print("A heti ledolgozott órák összesen: %d" %osszes)
