@@ -1,0 +1,22 @@
+diaksz=int(input("Add meg a diákok számát: "))
+adatok={}
+for i in range(diaksz):
+    nev=(input("Add meg a diak nevét: "))
+    osz=int(input("Add meg az osztályzatot: "))
+    adatok.update({nev:osz})
+print(adatok)
+n=0
+egyjegy=int(100/diaksz)
+szamlalo=[0,0,0,0,0]
+for i in adatok:
+    szamlalo[adatok[i]-1]+=egyjegy
+print(szamlalo)
+for i in range (len(szamlalo)):
+    print("%s es jegyből %s százalék lett."%(i+1,szamlalo[i]))
+jegyek=open("jegyek.csv","w")
+jegyek.write("nevek;osztályzatok\n")
+for i in adatok:
+        jegyek.write("%s;%d\n"%(i,adatok[i]))
+jegyek.write("\njegyek;százalék\n")
+for i in range (len(szamlalo)):
+    jegyek.write("%d;%d\n"%(i+1,szamlalo[i]))
