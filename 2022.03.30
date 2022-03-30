@@ -1,0 +1,47 @@
+
+def a24l(f):
+    for i in f.readlines():
+        if "\n" in i:
+            i=i.replace("\n","")
+        if len(i)>=4 and i.count("a")>=2:
+            print(i)
+    f.close()
+def mg(f):
+    c=[0,0]
+    magan=["a","á","e","é","i","í","o","ó","ö","ő","u","ú","ü","ű"]
+    for i in f.readlines():
+        if "\n" in i:
+            i=i.replace("\n","")
+            for j in i:
+                if j in magan:
+                    c[0]+=1
+                else:
+                    c[1]+=1
+    sz=c[0]+c[1]
+    sz1=100/sz  
+    print(c[0]*sz1,c[1]*sz1)
+def tordel(f):
+    irasjel=[".","!","?"]
+    x=open("auto2.txt","w")
+    print(f.read()[1000])
+    for i in range(len(f.read())):
+        if i<len(f.read()):
+            print(f.read()[i])
+            if f.read()[i] in irasjel:
+                f.read().remove(f.read()[i+1])
+                x.write(f.read()[i]+"\n")
+            else:
+                x.write(f.read()[i])
+    f.close()
+    x.close()
+def kir(f):
+    print(f.read())
+f=open("szavak.txt","r",encoding="utf-8")
+a24l(f)
+f=open("szavak.txt","r",encoding="utf-8")
+mg(f)
+
+f=open("auto.txt","r",encoding="utf-8")
+tordel(f)
+f=open("auto2.txt","r")
+kir(f)
