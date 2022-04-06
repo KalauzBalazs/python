@@ -1,0 +1,102 @@
+#ÚJ TANANYAG:
+"""
+OSZTÁLYOK ÉS OBJEKTUMOK 
+
+A pythonban szinte minden objektum, a tulajdonságokkal és metódusokkal együtt.
+
+Osztályt létrehozni a 'class' kulcsszóval lehet.
+"""
+
+class en_osztalyom:
+    x=5
+
+osztaly=en_osztalyom()
+print(osztaly.x)
+
+"""
+HOgy jobban megértsük az osztályokat, meg kell előbb érteni az _init_( függvényt.
+Minden osztálynak van egy _init_( nevű függvénye, amely minden aklommal lefut amikor 
+az oztályt inicializáljuk.
+
+HOgy megértsük, hozzunk létre egy Szemely osztályt és használjuk az 
+_init_() függvényt, hogy értékeket rendeljünk a névhez és korhoz.
+"""
+
+class Szemely:
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+
+p1 = Szemely("Pista", 21)
+
+print(p1.name)
+print(p1.age)
+
+"""
+Az _intit_() függvény automatikusan meghívódik minden egyes alkalommal
+amikor használjuk az osztályt egy új objektum létrehozására.
+A self paraméter a pillanatnyi oztály állapotra hivatkozik és ezzel
+tudjuk elérni az osztályhoz trtozó változókat. Nem kötelező self-nek nevetni,
+elenevezhetjükbármine, de az oztályon belüli függvények első parmétere kell,
+hogy legyen.
+Nézzünk ujjabb példát erre:
+"""
+class Szemely:
+    def __init__(osztaly_neve,nev,eletkor):
+        osztaly_neve.nev=nev
+        osztaly_neve.eletkor=eletkor
+    def az_en_nevem(valami):
+        print("Az én nevem"+valami.nev)
+    def az_en_korom(megint_lehet_barmi_neve):
+        print("Az én korom"+str(megint_lehet_barmi_neve))
+szemely1=Szemely("Jóska",55)
+szemely1.az_en_nevem()
+
+#meg is tudom változtatni az objektum valamelyik értékét
+szemely1.eletkor=34
+szemely1.az_en_korom()
+
+#törölni is tudok objektum tulajdonágokat, vagy egéz objektumot is
+
+#del szemely1.eletkor
+#szemely1.az_en_korom()
+#del szemely1
+#szemely1.az_en_nevem()
+
+"""FELADAT:
+Hozz létre egy Auto osztályt, mely a következő tulajdonságokat tartlmazza_
+márka, modell, típus, tnkamely ki írja, hogy hány százalékos  
+pillanyatnyi üzemanyg szint és figyelmettessen a tnankolásr
+Minden adatot kérj be a billentyűzetről!
+
+"""
+
+class Auto:
+    def __init__(self,marka,modell,tipus,tankm,tanksz):
+        self.marka=marka
+        self.modell=modell
+        self.tipus=tipus
+        self.tankm=tankm
+        self.tanksz=tanksz
+    def tanktst(self):
+        sz=100/self.tankm
+        szint=sz*self.tanksz
+        print(szint)
+        if szint<10:
+            print("Az üzemanyag %d"%szint,"%"," on van.",sep="")
+    def ty(self):
+        print(self.marka,self.modell,self.tipus)
+        
+        
+for i in range(3):
+    marka=input("Add meg a márkát: ")
+    modell=input("Add meg a modellt: ")
+    tipus=input("Add meg a típusát: ")
+    tankm=int(input("Add meg a tank méretét: "))
+    tanksz=int(input("Add meg a tank szintjét: "))
+    autol=Auto(marka,modell,tipus,tankm,tanksz)
+    autol.tanktst()
+    autol.ty()
+    f=open("utoo.csv","w",encoding="utf-8")
+    f.write(autol.marka+";"+autol.modell+";"+autol.tipus+";"+str(autol.tankm)+";"+str(autol.tanksz)+"\n")
+f.close()
