@@ -100,3 +100,4 @@ with open("utoo.csv","w",newline="")   as f:
         autol.tanktst()
         autol.ty()
         iro.writerow([autol.marka,autol.modell,autol.tipus,autol.tankm,autol.tanksz])
+
