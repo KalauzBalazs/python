@@ -70,7 +70,7 @@ pillanyatnyi üzemanyg szint és figyelmettessen a tnankolásr
 Minden adatot kérj be a billentyűzetről!
 
 """
-
+import csv
 class Auto:
     def __init__(self,marka,modell,tipus,tankm,tanksz):
         self.marka=marka
@@ -87,16 +87,16 @@ class Auto:
     def ty(self):
         print(self.marka,self.modell,self.tipus)
         
-        
-for i in range(3):
-    marka=input("Add meg a márkát: ")
-    modell=input("Add meg a modellt: ")
-    tipus=input("Add meg a típusát: ")
-    tankm=int(input("Add meg a tank méretét: "))
-    tanksz=int(input("Add meg a tank szintjét: "))
-    autol=Auto(marka,modell,tipus,tankm,tanksz)
-    autol.tanktst()
-    autol.ty()
-    f=open("utoo.csv","w",encoding="utf-8")
-    f.write(autol.marka+";"+autol.modell+";"+autol.tipus+";"+str(autol.tankm)+";"+str(autol.tanksz)+"\n")
-f.close()
+with open("utoo.csv","w",newline="")   as f:
+    iro=csv.writer(f,delimiter=";")
+    iro.writerow(["márka","modell","tipus","tankméret","tankszint"])
+    for i in range(3):
+        marka=input("Add meg a márkát: ")
+        modell=input("Add meg a modellt: ")
+        tipus=input("Add meg a típusát: ")
+        tankm=int(input("Add meg a tank méretét: "))
+        tanksz=int(input("Add meg a tank szintjét: "))
+        autol=Auto(marka,modell,tipus,tankm,tanksz)
+        autol.tanktst()
+        autol.ty()
+        iro.writerow([autol.marka,autol.modell,autol.tipus,autol.tankm,autol.tanksz])
