@@ -1,0 +1,36 @@
+#ÖRÖKLŐÉS
+
+"""
+A
+
+
+"""
+
+#Hozzunk létre egy új zülő oztályt
+class Szemely:
+    def __init__(self,vnev,knev):
+        self.vezeteknev=vnev
+        self.keresztnev=knev
+    def printnev(self):
+        print(self.vezeteknev,self.keresztnev)
+szemely=Szemely("Kiss","Pista")
+szemely.printnev()
+
+#most létrehozunk egy gyermek ostályt, amely örökli  Szemely osztály minden tulajdonágát
+class Diak(Szemely):
+    pass
+diak=Diak("Vicc","Elek")
+diak.printnev()
+"""
+
+
+"""
+class Diak(Szemely):
+    def __ineit__(self, vnev,knev):
+        Szemely.__init__(self,vnev,knev)
+
+        #super().__init__(self,vnev,knev)
+
+        self.erettsegi_eve=2022
+diak=Diak("Kis","Pist")
+print(diak.erettsegi_eve)
