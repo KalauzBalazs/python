@@ -1,0 +1,32 @@
+"""f,s,t=int(input("Add meg a háromszög 1. oldalát: ")),int(input("Add meg a háromszög 2. oldalát: ")),int(input("Add meg a háromszög 3. oldalát: "))
+if f+s<t or f+t<s or t+s<f:
+    print("A háromszög nem szerkeszthető meg.")
+else:
+    print("A háromszög megszerkeszthető.")
+
+f,s,t=int(input("Add meg a háromszög 1. oldalát: ")),int(input("Add meg a háromszög 2. oldalát: ")),int(input("Add meg a háromszög 3. oldalát: "))
+if f+s>t and f+t>s and t+s>f:
+    print("A háromszög megszerkeszthető.")
+else:
+    print("A háromszög nem szerkeszthető meg.")"""
+"""
+a,b=input("Add meg az 1. oldalt: "),input("Add meg az 2. oldalt: ")
+a,b=float(a),float(b)
+t=a*b
+k=2*(a+b)
+print("A téglalap területe %.2f\nA téglalap kerülete %.2f"%(t,k))
+"""
+def bekeres():
+    x=int(input("Add meg az évet: "))
+    return x
+def szamolas(x):
+    if x%400==0 or x%4==0 and x%100!=0:
+        return True
+    else:
+        return False
+
+bekert=bekeres()
+if szamolas(bekert):
+    print("Szökőév")
+else:
+    print("Nem szökőév")
