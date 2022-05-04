@@ -1,0 +1,86 @@
+# 1. feladat
+"""
+Készíts egy függvényt, amely fogad egy kötőjelekkel összekötött sztringet, amely szavakból áll,
+majd szétszedi a szavakat és végül abc sorrendbe rendezi, majd vissza adja ismét kötőjelekkel
+összekötve. A szavakat egyesével olvasd be a billentyűzetről, mindaddig amíg q karakter nem
+érkezik a bemeneten!
+Pl.: bemenet: zöld-barna-piros-kék
+    kimenet: barna-kék-piros-zöld
+"""
+
+from contextlib import AbstractAsyncContextManager
+from re import A
+
+
+def beker():
+    szavak=[]
+    szo=input("Kérek egy szót: ")
+    while szo!='q':
+        szavak.append(szo)
+        szo=input("Kérek egy szót: ")
+    sztring='-'.join(szavak)
+    return sztring
+
+def rendez(sztring):
+    szavak=sztring.split('-')
+    szavak.sort()
+    sztring='-'.join(szavak)
+    return sztring
+
+sztring=beker()
+print(rendez(sztring))
+
+##########################################################
+
+# 2. feladat
+
+"""
+Készíts egy függvényt, amely egy sztringet fogad argumentumként és eldönti róla, hogy 
+palindrom-e. Akkor lesz egy sztring palindrom, ha viszafelé is ugyanaz az értelme, mint
+előrefelé olvasva.
+"""
+
+def palindrome(sztring):
+    sz=sztring.lower()
+    sz=sz.replace(" ", "")
+    sz_forditva=sz[::-1]
+    if sz==sz_forditva:
+        print("A sztring egy palindrom!")
+    else:
+        print("A sztring NEM palindrom!")
+
+sztring=input("Adj meg egy sztringet: ")
+palindrome(sztring)
+
+###########################################################
+
+# 3. feladat
+"""
+Készíts egy függvényt, amely egy sztringet kap argumentumként és eldönti hogy az adott 
+sztring pangramma-e. Egy sztring vagy szó akkor pangramma, ha minden szava csak egyszer 
+tartalmaz egy adott betűt.
+Pl.: alma - nem pangramma
+    körte - pangramma
+"""
+
+def pangramma_e(sztring):
+    for betu in sztring:
+        if sztring.count(betu)>1:
+            print("A sztring NEM pangramma!")
+        else:
+            print("A sztring egy pangramma!")
+
+sztring=input("Adj meg egy sztringet: ")
+pangramma_e(sztring)
+
+# Házi feladat kijavítani
+
+def pangramma_e(sztring):
+    for betu in sztring:
+        if sztring.count(betu)>1:
+            print("A sztring NEM pangramma!")
+            exit()
+    print("A sztring egy pangramma!")
+
+sztring=input("Adj meg egy sztringet: ")
+pangramma_e(sztring)
