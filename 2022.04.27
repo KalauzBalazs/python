@@ -1,0 +1,70 @@
+# 1. feladat
+
+# Előző órai házi feladat megoldása
+from random import randint
+def lista_beker():
+    lista=[]
+    for i in range(5):
+        x=randint(0,9)
+        lista.append(x)
+    return lista
+
+def kiertekel(lista):
+    for elem in lista:
+        if lista.count(elem) > 1:
+            return False
+    return True
+
+#Más módon: a set() metódus segítségével!
+def set_kiertekel(lista):
+    duplum_nelkuli_halmaz=set(lista)
+    if len(lista) > len(duplum_nelkuli_halmaz):
+        return False
+    else:
+        return True
+
+
+for i in range(10):
+    lista = lista_beker()
+    print(lista)
+    if kiertekel(lista):
+        print("A lista egy halmaz!")
+    else:
+        print("A lista NEM halmaz!")
+    if set_kiertekel(lista):
+        print("A lista egy halmaz!")
+    else:
+        print("A lista NEM halmaz!")
+
+##############################################
+
+# 2. feladat
+
+"""
+Tölts fel egy listát 20 db random elemmel [1-100] intervallumban.
+Küszöböld ki a duplumokat a listából! 
+Határozd meg mindegyik elemről, hogy prímszám-e. 
+Akkor tekinthető prímszámnak ha csak egyel és önmagával osztható, és nagyobb mint egy!
+Valósítsd meg a programot függvénnyel!
+"""
+
+lista = [randint(1,100) for i in range(20)]
+
+valos_lista=list(set(lista)) # ezzel kiszedem a duplumokat
+
+def prime(szam):
+    if szam==1: # az 1 nem prímszám
+        return False
+    elif szam==2: # a 2 prímszám
+        return True
+    else:
+        for x in range(2,szam):
+            if szam % x == 0: 
+                return False
+        return True
+
+for szam in valos_lista:
+    if prime(szam):
+        print("A %d szám prímszám!" %szam)
+    else:
+        print("A %d szám NEM prímszám!" %szam)
